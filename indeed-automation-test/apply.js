@@ -24,7 +24,38 @@ async function writeDB(data) {
   await fs.writeFile(DB_PATH, JSON.stringify(data, null, 2));
 }
 
+// Helper to wait for either terminal input or page closure
+async function waitForManualAction(page, promptMessage) {
+  return new Promise((resolve) => {
+    let resolved = false;
+
+    const handleClose = () => {
+      if (!resolved) {
+        resolved = true;
+        console.log("\n[Browser window was closed by the user.]");
+        resolve('closed');
+      }
+    };
+
+    page.on('close', handleClose);
+
+    rl.question(promptMessage, (answer) => {
+      if (!resolved) {
+        resolved = true;
+        page.off('close', handleClose);
+        resolve('continued');
+      }
+    });
+  });
+}
+
 async function runAutoApply() {
+  const targetUrl = process.argv[2];
+  if (!targetUrl) {
+    console.error("Please provide a job URL as an argument.");
+    process.exit(1);
+  }
+
   const jobs = await readDB();
   
   console.log("Launching browser with saved session...");
@@ -48,12 +79,17 @@ async function runAutoApply() {
   for (let i = 0; i < jobs.length; i++) {
     const job = jobs[i];
     
+    if (job.url !== targetUrl) {
+      continue;
+    }
+
     if (job.status !== 'pending') {
+      console.log(`Job ${job.url} is not pending (status: ${job.status}).`);
       continue;
     }
 
     console.log(`\n----------------------------------------`);
-    console.log(`Processing Job ${i + 1}: ${job.url}`);
+    console.log(`Processing Job: ${job.url}`);
     job.status = 'in_progress';
     await writeDB(jobs);
 
@@ -74,35 +110,96 @@ async function runAutoApply() {
 
         let applicationDone = false;
         
-        // Loop through up to 10 pages of the application
-        for (let step = 0; step < 10; step++) {
+        // Loop through up to 20 pages of the application
+        for (let step = 0; step < 20; step++) {
           console.log(`Waiting for Step ${step + 1} to load...`);
           // 4-second wait to allow React to render the next screen
           await page.waitForTimeout(4000); 
 
-          // 1. Check if we reached the final "Submit" button
-          const submitBtn = page.getByRole('button', { name: /submit your application/i }).first();
+          // 1. Check if we reached any "Submit" button (never auto-click submit)
+          const submitBtn = page.getByRole('button', { name: /submit/i }).first();
           if (await submitBtn.isVisible()) {
             console.log("\n*** FINAL REVIEW STAGE ***");
             console.log("The script has reached the final step and paused.");
             console.log("Please review your information in the browser window.");
-            console.log("You can manually click 'Submit your application', or close the window.");
+            console.log("You can manually click the Submit button, or close the window.");
             
-            await new Promise((resolve) => {
-              rl.question('\nPress ENTER in this terminal when you are done...', resolve);
-            });
+            const action = await waitForManualAction(page, '\nPress ENTER in this terminal when you are done...');
+            if (action === 'closed') {
+              console.log("Aborting application flow since the window was closed.");
+              applicationDone = false; // or we can treat as manual_action_required
+              break;
+            }
 
             applicationDone = true;
             break;
           }
 
           // 2. Broaden the "Continue" check to catch variations like "Next" or "Review your details"
-          const continueBtn = page.getByRole('button', { name: /continue|next|review/i }).first();
-          if (await continueBtn.isVisible()) {
-            const btnText = await continueBtn.innerText();
+          const continueBtnLocator = page.getByRole('button', { name: /continue|next|review/i }).filter({ hasNotText: /submit/i }).first();
+          if (await continueBtnLocator.isVisible()) {
+            // Get an ElementHandle to the specific button instance
+            const continueBtnHandle = await continueBtnLocator.elementHandle();
+            const btnText = await continueBtnLocator.innerText();
             console.log(`Step ${step + 1}: Found '${btnText.trim()}' button. Clicking...`);
+
             // force: true bypasses invisible loading overlays that might block the click
-            await continueBtn.click({ force: true });
+            await continueBtnLocator.click({ force: true });
+
+            // After clicking continue, check if the EXACT SAME button is still attached to the DOM after a short delay
+            // (meaning we didn't advance to the next step, likely due to a required field)
+            await page.waitForTimeout(2000);
+
+            let isStillAttached = false;
+            try {
+              if (continueBtnHandle) {
+                 isStillAttached = await page.evaluate(node => document.body.contains(node), continueBtnHandle);
+              }
+            } catch (e) {
+              // If evaluate fails (e.g. context destroyed), it means we definitely advanced
+              isStillAttached = false;
+            }
+
+            if (isStillAttached) {
+              console.log("\n*** PAUSED: REQUIRED FIELD MISSING ***");
+              console.log("The page did not advance after clicking continue.");
+              console.log("Please fill in the required fields and click 'Continue' manually in the browser...");
+
+              // Wait until the old continue button is detached from the DOM or the window is closed
+              let manualAdvanced = false;
+              let windowClosed = false;
+
+              const handleClose = () => { windowClosed = true; };
+              page.on('close', handleClose);
+
+              while (!manualAdvanced && !windowClosed) {
+                await page.waitForTimeout(500);
+                try {
+                  if (continueBtnHandle) {
+                    const attached = await page.evaluate(node => document.body.contains(node), continueBtnHandle);
+                    if (!attached) {
+                      manualAdvanced = true;
+                    }
+                  } else {
+                    manualAdvanced = true;
+                  }
+                } catch (e) {
+                  // Evaluate failed (e.g. navigation occurred)
+                  manualAdvanced = true;
+                }
+              }
+
+              page.off('close', handleClose);
+
+              if (windowClosed) {
+                console.log("Window closed during manual field entry. Aborting.");
+                break;
+              }
+
+              console.log("Page advanced! Resuming automation...");
+              continue; // We successfully advanced manually, go to next step
+            }
+
             continue; 
           }
 
@@ -116,19 +213,27 @@ async function runAutoApply() {
 
           // If we reach here, no standard navigation buttons were found
           console.log("\n*** AUTOMATION STUCK ON DYNAMIC QUESTION ***");
-          break;
+          console.log("No continue/submit button found. Please navigate manually.");
+
+          const action = await waitForManualAction(page, '\nPress ENTER in this terminal when you are done with this step...');
+          if (action === 'closed') {
+            console.log("Window closed on dynamic question. Aborting.");
+            break;
+          }
+
+          // Decrement step to check again
+          step--;
+          continue;
         }
 
         if (applicationDone) {
           console.log("Application flow handled!");
           job.status = 'submitted';
         } else {
-          console.log("Please complete the remaining questions in the browser.");
-          
-          await new Promise((resolve) => {
-            rl.question('\nPress ENTER in this terminal when you are done, or to cancel...', resolve);
-          });
-          
+          if (!page.isClosed()) {
+            console.log("Please complete the remaining questions in the browser.");
+            await waitForManualAction(page, '\nPress ENTER in this terminal when you are done, or to cancel...');
+          }
           job.status = 'manual_action_required';
         }
 
@@ -144,7 +249,10 @@ async function runAutoApply() {
 
     // Save the final status for this job
     await writeDB(jobs);
-    console.log(`Job ${i + 1} marked as: ${job.status}`);
+    console.log(`Job marked as: ${job.status}`);
+
+    // Break out of the loop after processing the specific job
+    break;
   }
 
   console.log("\nAll jobs processed. Closing browser.");
