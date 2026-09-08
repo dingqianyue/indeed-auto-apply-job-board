@@ -14,12 +14,26 @@ interface JobDetailProps {
 export function JobDetail({ job, onToggleSave }: JobDetailProps) {
   const [isApplying, setIsApplying] = useState(false);
 
-  const handleApply = () => {
+  const handleApply = async () => {
     setIsApplying(true);
-    setTimeout(() => {
+    try {
+      const response = await fetch('http://localhost:3001/api/apply', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url: job.url })
+      });
+      if (response.ok) {
+        alert("Auto apply script started in backend terminal.");
+      } else {
+        const errorData = await response.json();
+        alert(`Failed to start auto apply: ${errorData.error || 'Unknown error'}`);
+      }
+    } catch (error) {
+      alert("Failed to trigger auto apply. Is the backend server running?");
+      console.error(error);
+    } finally {
       setIsApplying(false);
-      alert("Auto apply script triggered in backend (mocked for frontend demo).");
-    }, 1500);
+    }
   };
 
   // Build tags strictly ordered: [Full-time/Part-time, Years of Experience, Entry/Mid level, Salary]

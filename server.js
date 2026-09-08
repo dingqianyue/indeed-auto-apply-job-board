@@ -22,9 +22,8 @@ app.post('/api/apply', (req, res) => {
   isRunning = true;
   console.log(`Starting auto-apply script for ${url}`);
 
-  // In a real scenario, we'd pass the URL to the script.
-  // For now, the script processes all "pending" jobs.
-  const child = spawn('node', ['apply.js'], {
+  // Pass the exact job URL to apply.js
+  const child = spawn('node', ['apply.js', url], {
     cwd: path.join(__dirname, 'indeed-automation-test'),
     stdio: 'inherit' // Pipes output to the terminal where this server is running
   });

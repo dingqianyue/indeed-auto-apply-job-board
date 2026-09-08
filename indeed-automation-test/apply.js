@@ -25,6 +25,12 @@ async function writeDB(data) {
 }
 
 async function runAutoApply() {
+  const targetUrl = process.argv[2];
+  if (!targetUrl) {
+    console.error("Please provide a job URL as an argument.");
+    process.exit(1);
+  }
+
   const jobs = await readDB();
   
   console.log("Launching browser with saved session...");
@@ -48,12 +54,17 @@ async function runAutoApply() {
   for (let i = 0; i < jobs.length; i++) {
     const job = jobs[i];
     
+    if (job.url !== targetUrl) {
+      continue;
+    }
+
     if (job.status !== 'pending') {
+      console.log(`Job ${job.url} is not pending (status: ${job.status}).`);
       continue;
     }
 
     console.log(`\n----------------------------------------`);
-    console.log(`Processing Job ${i + 1}: ${job.url}`);
+    console.log(`Processing Job: ${job.url}`);
     job.status = 'in_progress';
     await writeDB(jobs);
 
@@ -74,19 +85,19 @@ async function runAutoApply() {
 
         let applicationDone = false;
         
-        // Loop through up to 10 pages of the application
-        for (let step = 0; step < 10; step++) {
+        // Loop through up to 20 pages of the application
+        for (let step = 0; step < 20; step++) {
           console.log(`Waiting for Step ${step + 1} to load...`);
           // 4-second wait to allow React to render the next screen
           await page.waitForTimeout(4000); 
 
-          // 1. Check if we reached the final "Submit" button
-          const submitBtn = page.getByRole('button', { name: /submit your application/i }).first();
+          // 1. Check if we reached any "Submit" button (never auto-click submit)
+          const submitBtn = page.getByRole('button', { name: /submit/i }).first();
           if (await submitBtn.isVisible()) {
             console.log("\n*** FINAL REVIEW STAGE ***");
             console.log("The script has reached the final step and paused.");
             console.log("Please review your information in the browser window.");
-            console.log("You can manually click 'Submit your application', or close the window.");
+            console.log("You can manually click the Submit button, or close the window.");
             
             await new Promise((resolve) => {
               rl.question('\nPress ENTER in this terminal when you are done...', resolve);
@@ -97,12 +108,29 @@ async function runAutoApply() {
           }
 
           // 2. Broaden the "Continue" check to catch variations like "Next" or "Review your details"
-          const continueBtn = page.getByRole('button', { name: /continue|next|review/i }).first();
+          const continueBtn = page.getByRole('button', { name: /continue|next|review/i }).filter({ hasNotText: /submit/i }).first();
           if (await continueBtn.isVisible()) {
             const btnText = await continueBtn.innerText();
             console.log(`Step ${step + 1}: Found '${btnText.trim()}' button. Clicking...`);
             // force: true bypasses invisible loading overlays that might block the click
             await continueBtn.click({ force: true });
+
+            // After clicking continue, check if it's still visible after a short delay
+            // (meaning we didn't advance, likely due to a required field)
+            await page.waitForTimeout(2000);
+            if (await continueBtn.isVisible()) {
+              console.log("\n*** PAUSED: REQUIRED FIELD MISSING ***");
+              console.log("The page did not advance after clicking continue.");
+              console.log("Please fill in the required fields manually in the browser.");
+              await new Promise((resolve) => {
+                rl.question('\nPress ENTER in this terminal when you have filled the fields and want the script to continue...', resolve);
+              });
+
+              // We decrement step so we retry this same page
+              step--;
+              continue;
+            }
+
             continue; 
           }
 
@@ -116,7 +144,13 @@ async function runAutoApply() {
 
           // If we reach here, no standard navigation buttons were found
           console.log("\n*** AUTOMATION STUCK ON DYNAMIC QUESTION ***");
-          break;
+          console.log("No continue/submit button found. Please navigate manually.");
+          await new Promise((resolve) => {
+            rl.question('\nPress ENTER in this terminal when you are done with this step...', resolve);
+          });
+          // Decrement step to check again
+          step--;
+          continue;
         }
 
         if (applicationDone) {
@@ -144,7 +178,10 @@ async function runAutoApply() {
 
     // Save the final status for this job
     await writeDB(jobs);
-    console.log(`Job ${i + 1} marked as: ${job.status}`);
+    console.log(`Job marked as: ${job.status}`);
+
+    // Break out of the loop after processing the specific job
+    break;
   }
 
   console.log("\nAll jobs processed. Closing browser.");
