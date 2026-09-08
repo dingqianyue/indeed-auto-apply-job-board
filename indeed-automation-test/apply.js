@@ -1,4 +1,3 @@
-const DB_PATH = './client/public/applications.json';
 
 const fs = require('fs').promises;
 const { chromium } = require('playwright');
@@ -9,7 +8,7 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-const DB_PATH = './applications.json';
+const DB_PATH = '../client/public/applications.json';
 
 async function readDB() {
   try {

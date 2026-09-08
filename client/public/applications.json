@@ -1,11 +1,58 @@
 [
   {
-    "url": "https://www.indeed.com/viewjob?jk=cb22df43b690dbb0",
+    "url": "https://www.indeed.com/viewjob?jk=aad7eaf60ccf42f2",
     "status": "pending",
-    "title": "Software Engineer",
-    "company": "DMAero, LLC",
-    "location": "Warner Robins, GA",
-    "matchScore": 94
+    "title": "Associate AI Software Engineer",
+    "company": "Asure Software",
+    "location": "Addison, TX",
+    "matchScore": 96,
+    "salary": "$80,000 a year",
+    "jobType": "Full-time",
+    "experienceLevel": "Entry/Mid level",
+    "experienceYears": "0-2+ years",
+    "postedHoursAgo": 2,
+    "applicantCount": 89,
+    "saved": false,
+    "benefits": [
+      { "icon": "📈", "title": "Employee stock purchase plan", "description": "Stock purchase program." },
+      { "icon": "🏥", "title": "Health insurance", "description": "Medical, Dental, Vision." },
+      { "icon": "🌴", "title": "Paid time off", "description": "Self-Managed PTO." },
+      { "icon": "💳", "title": "Health savings account", "description": "HSA options." },
+      { "icon": "🏦", "title": "401(k)", "description": "401K Program with 3% safe harbor contribution." }
+    ],
+    "companyInfo": {
+      "name": "Asure Software",
+      "founded": "Unknown",
+      "size": "600+ employees",
+      "website": "asuresoftware.com",
+      "description": "Our HCM platform empowers more than 100,000 clients to build great teams and better manage their people while staying compliant in an ever-changing HR legislative landscape.",
+      "location": "Addison, TX"
+    },
+    "whyYouMatch": {
+      "pros": [
+        "Strong backend integration skills demonstrated in the Trip Planner app using Python, pandas, and AWS.",
+        "Solid API design and security experience from building a RESTful backend for the Crowdfunding App.",
+        "Demonstrated capability of working with NoSQL (MongoDB in Crowdfunding app) fitting the AI data requirements."
+      ],
+      "cons": [
+        "Lacks direct professional exposure to LLM orchestration frameworks (LangChain, MCP)."
+      ]
+    },
+    "description": "As an Associate AI Software Engineer, you will work alongside experienced engineers and AI practitioners to design, develop, test, and maintain AI-powered software that supports Asure's products and platform services. In this role you will primarily write Python and build features that integrate large language models (LLMs) and other AI services into real applications running in our AWS cloud environment.",
+    "responsibilities": [
+      "Collaborate with engineers and stakeholders to build AI-powered software features.",
+      "Write clean, maintainable, well-tested Python code for applications, services, and APIs.",
+      "Integrate large language models (LLMs) and AI services into software applications.",
+      "Assist with prompt design, experimentation, evaluation, and validation of LLM-based features.",
+      "Contribute to data pipelines and retrieval components (e.g., embeddings and vector search)."
+    ],
+    "qualifications": [
+      "Bachelor's or Master's degree in Computer Science, AI, or related field.",
+      "Proficiency in Python.",
+      "Foundational understanding of artificial intelligence, machine learning, or generative AI concepts.",
+      "Familiarity with at least one major cloud platform (AWS preferred)."
+    ],
+    "aboutCompany": "To provide Human Capital Management (HCM) software and services that help companies grow, while nurturing a culture of growth around us."
   },
   {
     "url": "https://www.indeed.com/viewjob?jk=43db0fee933b6487",
@@ -13,23 +60,50 @@
     "title": "Junior Software Engineer",
     "company": "HOUSEMAX FUNDING LLC",
     "location": "Austin, TX",
-    "matchScore": 89
-  },
-  {
-    "url": "https://www.indeed.com/viewjob?jk=d0f6746ba5cbc7ea",
-    "status": "pending",
-    "title": "Junior Software Engineer",
-    "company": "PSI Services LLC",
-    "location": "Olathe, KS",
-    "matchScore": 92
-  },
-  {
-    "url": "https://www.indeed.com/viewjob?jk=aad7eaf60ccf42f2",
-    "status": "pending",
-    "title": "Associate AI Software Engineer",
-    "company": "Asure Software",
-    "location": "Addison, TX",
-    "matchScore": 88
+    "matchScore": 91,
+    "salary": "Not specified",
+    "jobType": "Full-time",
+    "experienceLevel": "Entry level",
+    "experienceYears": "0-2 years",
+    "postedHoursAgo": 12,
+    "applicantCount": 128,
+    "saved": true,
+    "benefits": [
+      { "icon": "🏥", "title": "Health insurance", "description": "Medical, dental, and vision coverage." },
+      { "icon": "🌴", "title": "Paid time off", "description": "Generous PTO." },
+      { "icon": "🦷", "title": "Dental insurance", "description": "Coverage for dental care." },
+      { "icon": "👁️", "title": "Vision insurance", "description": "Coverage for vision care." }
+    ],
+    "companyInfo": {
+      "name": "HOUSEMAX FUNDING LLC",
+      "founded": "Unknown",
+      "size": "Unknown",
+      "website": "housemaxfunding.com",
+      "description": "HouseMax Funding is a staple of the real estate investment community. As a premier hard money lender, we are known for speed, reliability, and deep market expertise.",
+      "location": "Austin, TX"
+    },
+    "whyYouMatch": {
+      "pros": [
+        "Extensive full-stack experience (React, Node.js) developed in the Trip Planner and Crowdfunding projects.",
+        "Proven ability managing relational data and SQL optimization (PostgreSQL) from the Trip Planner app.",
+        "Experienced with cloud deployments (AWS, Vercel) matching the Next.js/Vercel stack requirement."
+      ],
+      "cons": [
+        "May require learning some specific real estate lending domain knowledge."
+      ]
+    },
+    "description": "HouseMax Funding is seeking a Junior Software Engineer to help build and support the technology that drives our real estate lending operations.",
+    "responsibilities": [
+      "Build and maintain features for our internal applications using Next.js, Supabase, and Vercel",
+      "Implement bug fixes, enhancements, and new functionality",
+      "Provide production support in a fast-paced real estate environment"
+    ],
+    "qualifications": [
+      "Bachelor’s degree in Computer Science, Software Engineering",
+      "0-2+ years of experience in software engineering",
+      "Experience building, maintaining, or contributing to web-based applications"
+    ],
+    "aboutCompany": "HouseMax Funding is a staple of the real estate investment community."
   },
   {
     "url": "https://www.indeed.com/viewjob?jk=77895585bfca19f1",
@@ -37,6 +111,154 @@
     "title": "Entry-level Software Developer",
     "company": "IXRF Systems",
     "location": "Austin, TX",
-    "matchScore": 96
+    "matchScore": 87,
+    "salary": "From $80,000 a year",
+    "jobType": "Full-time",
+    "experienceLevel": "Entry level",
+    "experienceYears": "0-2 years",
+    "postedHoursAgo": 5,
+    "applicantCount": 62,
+    "saved": false,
+    "benefits": [
+      { "icon": "🏦", "title": "401(k)", "description": "401(k) matching." },
+      { "icon": "🏥", "title": "Health insurance", "description": "Medical coverage." },
+      { "icon": "🌴", "title": "Paid time off", "description": "Generous PTO." },
+      { "icon": "🦷", "title": "Dental insurance", "description": "Coverage for dental care." },
+      { "icon": "👁️", "title": "Vision insurance", "description": "Coverage for vision care." }
+    ],
+    "companyInfo": {
+      "name": "IXRF Systems",
+      "founded": "Unknown",
+      "size": "Unknown",
+      "website": "ixrfsystems.com",
+      "description": "At IXRF Systems, we design and manufacture stand-alone high-end X-ray microanalysis systems.",
+      "location": "Austin, TX"
+    },
+    "whyYouMatch": {
+      "pros": [
+        "Deep C++ systems experience demonstrated in the PennCloud distributed storage project.",
+        "Ability to tackle complex problems algorithmically, shown by custom TCP/IP and load balancer implementations."
+      ],
+      "cons": [
+        "Lacks specific experience with Windows GUI frameworks (MFC).",
+        "No prior background interacting directly with laboratory or hardware equipment APIs."
+      ]
+    },
+    "description": "This is a great opportunity for an early-career developer who wants to grow in a hands-on, technical environment. You will work closely with engineers and scientists to help build, test, maintain, and improve software used in scientific instruments.",
+    "responsibilities": [
+      "Help develop, test, and improve software features for X-ray microanalysis applications.",
+      "Debug issues, investigate root causes, and think through practical solutions.",
+      "Support continuous integration and long-term product quality.",
+      "Assist with refactoring legacy code."
+    ],
+    "qualifications": [
+      "Degree in Computer Science, Software Engineering, or a related field",
+      "Basic understanding of software engineering fundamentals and OOP.",
+      "Experience with C++ or a strong interest in learning it."
+    ],
+    "aboutCompany": "Our work sits at the intersection of software, hardware, and science."
+  },
+  {
+    "url": "https://www.indeed.com/viewjob?jk=d0f6746ba5cbc7ea",
+    "status": "pending",
+    "title": "Junior Software Engineer",
+    "company": "PSI Services LLC",
+    "location": "Olathe, KS",
+    "matchScore": 78,
+    "salary": "$75,000 a year",
+    "jobType": "Full-time",
+    "experienceLevel": "Entry level",
+    "experienceYears": "0-2 years",
+    "postedHoursAgo": 24,
+    "applicantCount": 215,
+    "saved": false,
+    "benefits": [
+      { "icon": "🏦", "title": "401(k)", "description": "Retirement savings plan." },
+      { "icon": "🏥", "title": "Health insurance", "description": "Medical coverage." },
+      { "icon": "🌴", "title": "Paid time off", "description": "Enhanced paid time off policies." }
+    ],
+    "companyInfo": {
+      "name": "PSI Services LLC",
+      "founded": "Unknown",
+      "size": "Unknown",
+      "website": "psionline.com",
+      "description": "At PSI, we believe that people achieve their best when they feel they truly belong.",
+      "location": "Olathe, KS"
+    },
+    "whyYouMatch": {
+      "pros": [
+        "Strong Java and RESTful API experience from building the Crowdfunding app with 100% test coverage.",
+        "Experienced in React and JavaScript frontend work shown in the Trip Planner app."
+      ],
+      "cons": [
+        "Might require learning specific proprietary enterprise tools like Thymeleaf or Spring MVC."
+      ]
+    },
+    "description": "The Junior Software Engineer role at PSI is an entry-level position designed to support the development, maintenance, and enhancement of PSI’s technology platforms.",
+    "responsibilities": [
+      "Create, maintain, and enhance standard and ad-hoc reports",
+      "Validate data accuracy and completeness across reports and systems.",
+      "Support existing web applications by performing minor enhancements"
+    ],
+    "qualifications": [
+      "Bachelor’s degree in Computer Science, Information Systems",
+      "0–2 years of experience in a software engineering role",
+      "Hands-on experience with modern software development languages"
+    ],
+    "aboutCompany": "Join Us at PSI - Where You Belong, Grow, and Thrive!"
+  },
+  {
+    "url": "https://www.indeed.com/viewjob?jk=cb22df43b690dbb0",
+    "status": "pending",
+    "title": "Software Engineer",
+    "company": "DMAero, LLC",
+    "location": "Warner Robins, GA",
+    "matchScore": 45,
+    "salary": "$75,000 - $110,000 a year",
+    "jobType": "Full-time",
+    "experienceLevel": "Mid level",
+    "experienceYears": "2+ years",
+    "postedHoursAgo": 4,
+    "applicantCount": 45,
+    "saved": false,
+    "benefits": [
+      { "icon": "🎓", "title": "Paid training", "description": "Continuous learning opportunities." },
+      { "icon": "🛠️", "title": "On-the-job training", "description": "Hands-on experience." },
+      { "icon": "📚", "title": "Tuition reimbursement", "description": "Support for continuing education." },
+      { "icon": "🎖️", "title": "Military leave", "description": "Support for those serving." },
+      { "icon": "👶", "title": "Parental leave", "description": "Time off for new parents." },
+      { "icon": "🏦", "title": "401(k)", "description": "Retirement savings plan." },
+      { "icon": "🏥", "title": "Health insurance", "description": "Comprehensive medical coverage." }
+    ],
+    "companyInfo": {
+      "name": "DMAero, LLC",
+      "founded": "Unknown",
+      "size": "Unknown",
+      "website": "dmaero.com",
+      "description": "DMAero, LLC is a mission-focused, ISO 9001:2015-certified engineering firm delivering high-impact engineering solutions to the U.S. Department of Defense.",
+      "location": "Warner Robins, GA"
+    },
+    "whyYouMatch": {
+      "pros": [
+        "Experience in C/C++ gained through the PennCloud systems project."
+      ],
+      "cons": [
+        "Significant mismatch: Lacks specific experience with Linux-based embedded applications, real-time operating systems (RTOS), and avionics communication protocols (MIL-STD-1553)."
+      ]
+    },
+    "description": "We are seeking a motivated Software Engineer to join our engineering team in Warner Robins, GA and contribute to the development of next-generation military avionics, mission computing systems, and aircraft modifications.",
+    "responsibilities": [
+      "Design, develop, test, and maintain software for aerospace and defense applications",
+      "Develop software primarily in C and C++",
+      "Develop and maintain Linux-based embedded applications",
+      "Troubleshoot software and hardware integration issues"
+    ],
+    "qualifications": [
+      "Bachelor's degree in Software Engineering or related technical field",
+      "Strong Linux operating system knowledge and experience",
+      "Experience programming in C and/or C++",
+      "U.S. Citizenship"
+    ],
+    "aboutCompany": "DMAero, LLC is a mission-focused, ISO 9001:2015-certified engineering firm delivering high-impact engineering solutions to the U.S. Department of Defense."
   }
 ]
