@@ -2,41 +2,133 @@
   {
     "url": "https://www.indeed.com/viewjob?jk=cb22df43b690dbb0",
     "status": "pending",
-    "title": "Software Engineer",
-    "company": "DMAero, LLC",
-    "location": "Warner Robins, GA",
-    "matchScore": 94
+    "title": "Senior UX/UI Designer",
+    "company": "Kforce",
+    "location": "Madison, WI",
+    "matchScore": 94,
+    "salary": "$115,000 - $130,000",
+    "jobType": "Full time",
+    "experience": "Mid-Senior level",
+    "tags": ["Remote Flexibility", "Equity Options", "Mental Wellness"],
+    "benefits": [
+      { "icon": "🏠", "title": "Remote Flexibility", "description": "Work from wherever you're most productive and happy." },
+      { "icon": "📈", "title": "Equity Options", "description": "Become a shareholder through our stock options plan after 6 months." },
+      { "icon": "💳", "title": "Meal Vouchers", "description": "Enjoy an €8/day meal voucher to make your lunch break even better." },
+      { "icon": "🍴", "title": "Lunch at the Office", "description": "If you're in Bologna, we have lunch together at the office, and it is on us!" },
+      { "icon": "🏥", "title": "Health Coverage", "description": "Comprehensive support through the Metasalute Health Assistance Fund." },
+      { "icon": "🎂", "title": "Birthday Bliss", "description": "Celebrate your day with an extra day off, just for you." },
+      { "icon": "🧠", "title": "Mental Wellness", "description": "Free access to iFeel, our psychological support platform." },
+      { "icon": "🌍", "title": "International Environment", "description": "Grow your language skills while working with a diverse and global team." }
+    ],
+    "companyInfo": {
+      "name": "Kforce",
+      "founded": "1979",
+      "size": "1001-5000 employees",
+      "website": "kforce.com",
+      "description": "Kforce has a client that is seeking a UI/UX Developer in Madison, WI. Overview: In brief, we a handful of AI-powered tools for our workforce which could use a facelift to improve the overall user experience. In an ideal scenario, we would love to bring on someone that has the skills to work directly in our codebases (engineering skills) while they make improvements to the UI/UX based on their knowledge of best practices. We currently have three tools that users are interacting with; one is an Edge browser extension (JavaScript), one is using Streamlit web application (python currently but we'd be open to migrating this to some React/Angular/other framework), and the other is a basic React web application."
+    },
+    "whyYouMatch": {
+      "pros": [
+        "Strong experience in React web applications matching their requirements.",
+        "Solid background in UI/UX improvements and best practices.",
+        "Previous work involving JavaScript browser extensions."
+      ],
+      "cons": [
+        "Limited experience with Python/Streamlit."
+      ]
+    },
+    "description": "We are looking for a Senior UI/UX Designer to join our dynamic team and help shape the future of our AI-powered tools.",
+    "responsibilities": [
+      "Collaborate directly in engineering codebases to improve UI/UX.",
+      "Redesign existing Edge browser extensions and web applications.",
+      "Work closely with product managers and engineers to ensure high-quality user experiences."
+    ],
+    "qualifications": [
+      "5+ years of experience in UI/UX Design.",
+      "Proficiency in React and modern JavaScript.",
+      "Experience with AI-powered tool interfaces is a plus."
+    ],
+    "aboutCompany": "Kforce is a professional staffing services firm..."
   },
   {
     "url": "https://www.indeed.com/viewjob?jk=43db0fee933b6487",
-    "status": "pending",
-    "title": "Junior Software Engineer",
+    "status": "in_progress",
+    "title": "Front End Developer",
     "company": "HOUSEMAX FUNDING LLC",
     "location": "Austin, TX",
-    "matchScore": 89
+    "matchScore": 89,
+    "salary": "$90,000 - $110,000",
+    "jobType": "Full time",
+    "experience": "Mid level",
+    "tags": ["React", "TypeScript", "Tailwind"],
+    "benefits": [
+      { "icon": "🏥", "title": "Health Coverage", "description": "Comprehensive health, dental, and vision." },
+      { "icon": "🌴", "title": "Unlimited PTO", "description": "Take time off when you need it." }
+    ],
+    "companyInfo": {
+      "name": "HOUSEMAX FUNDING LLC",
+      "founded": "2015",
+      "size": "51-200 employees",
+      "website": "housemaxfunding.com",
+      "description": "HouseMax Funding is a leading provider of short-term lending for real estate investors."
+    },
+    "whyYouMatch": {
+      "pros": [
+        "Strong React and TypeScript skills."
+      ],
+      "cons": [
+        "Location might require relocation."
+      ]
+    },
+    "description": "We are looking for a Front End Developer to build highly responsive web applications.",
+    "responsibilities": [
+      "Develop new user-facing features using React.js.",
+      "Build reusable components and front-end libraries for future use."
+    ],
+    "qualifications": [
+      "Strong proficiency in JavaScript, including DOM manipulation and the JavaScript object model.",
+      "Thorough understanding of React.js and its core principles."
+    ],
+    "aboutCompany": "HouseMax Funding..."
   },
   {
     "url": "https://www.indeed.com/viewjob?jk=d0f6746ba5cbc7ea",
-    "status": "pending",
-    "title": "Junior Software Engineer",
-    "company": "PSI Services LLC",
-    "location": "Olathe, KS",
-    "matchScore": 92
-  },
-  {
-    "url": "https://www.indeed.com/viewjob?jk=aad7eaf60ccf42f2",
-    "status": "pending",
-    "title": "Associate AI Software Engineer",
-    "company": "Asure Software",
-    "location": "Addison, TX",
-    "matchScore": 88
-  },
-  {
-    "url": "https://www.indeed.com/viewjob?jk=77895585bfca19f1",
-    "status": "pending",
-    "title": "Entry-level Software Developer",
-    "company": "IXRF Systems",
-    "location": "Austin, TX",
-    "matchScore": 96
+    "status": "submitted",
+    "title": "Full Stack Software Engineer",
+    "company": "Jobnova",
+    "location": "Remote",
+    "matchScore": 98,
+    "salary": "$130,000 - $160,000",
+    "jobType": "Full time",
+    "experience": "Senior level",
+    "tags": ["AI", "React", "Node.js"],
+    "benefits": [
+      { "icon": "🏠", "title": "Remote Flexibility", "description": "Work from wherever you're most productive." },
+      { "icon": "📈", "title": "Equity Options", "description": "Stock options included." }
+    ],
+    "companyInfo": {
+      "name": "Jobnova",
+      "founded": "2023",
+      "size": "11-50 employees",
+      "website": "jobnova.ai",
+      "description": "Jobnova is an AI agent-driven future job infrastructure that automates how people discover, match, and apply for work."
+    },
+    "whyYouMatch": {
+      "pros": [
+        "Experience building AI agent applications.",
+        "Full stack capabilities matching the tech stack exactly."
+      ],
+      "cons": []
+    },
+    "description": "Join us in revolutionizing the job market with AI agents.",
+    "responsibilities": [
+      "Build and maintain full stack AI applications.",
+      "Implement auto-apply workflows."
+    ],
+    "qualifications": [
+      "Experience with AI models and agents.",
+      "Strong Node.js and React background."
+    ],
+    "aboutCompany": "We believe humans deserve better opportunities in the AI era!"
   }
 ]
