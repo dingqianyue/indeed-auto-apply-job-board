@@ -163,17 +163,41 @@ async function runAutoApply() {
             if (isStillAttached) {
               console.log("\n*** PAUSED: REQUIRED FIELD MISSING ***");
               console.log("The page did not advance after clicking continue.");
-              console.log("Please fill in the required fields manually in the browser.");
+              console.log("Please fill in the required fields and click 'Continue' manually in the browser...");
 
-              const action = await waitForManualAction(page, '\nPress ENTER in this terminal when you have filled the fields and want the script to continue...');
-              if (action === 'closed') {
+              // Wait until the old continue button is detached from the DOM or the window is closed
+              let manualAdvanced = false;
+              let windowClosed = false;
+
+              const handleClose = () => { windowClosed = true; };
+              page.on('close', handleClose);
+
+              while (!manualAdvanced && !windowClosed) {
+                await page.waitForTimeout(500);
+                try {
+                  if (continueBtnHandle) {
+                    const attached = await page.evaluate(node => document.body.contains(node), continueBtnHandle);
+                    if (!attached) {
+                      manualAdvanced = true;
+                    }
+                  } else {
+                    manualAdvanced = true;
+                  }
+                } catch (e) {
+                  // Evaluate failed (e.g. navigation occurred)
+                  manualAdvanced = true;
+                }
+              }
+
+              page.off('close', handleClose);
+
+              if (windowClosed) {
                 console.log("Window closed during manual field entry. Aborting.");
                 break;
               }
 
-              // We decrement step so we retry this same page
-              step--;
-              continue;
+              console.log("Page advanced! Resuming automation...");
+              continue; // We successfully advanced manually, go to next step
             }
 
             continue; 
