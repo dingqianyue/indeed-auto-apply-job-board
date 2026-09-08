@@ -16,7 +16,7 @@ export default function App() {
     try {
       const response = await fetch('/applications.json');
       const data = await response.json();
-      
+
       // Merge with local state to preserve "saved" status across polls if we wanted to,
       // but for this take-home we just rely on updating the state directly here.
       setJobs(prevJobs => {

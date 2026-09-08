@@ -14,21 +14,11 @@ interface JobDetailProps {
 export function JobDetail({ job, onToggleSave }: JobDetailProps) {
   const [isApplying, setIsApplying] = useState(false);
 
-  const handleApply = async () => {
+  const handleApply = () => {
     setIsApplying(true);
-    setTimeout(async () => {
+    setTimeout(() => {
       setIsApplying(false);
-      try {
-        const response = await fetch("http://localhost:3001/api/apply", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ url: job.url })
-        });
-        if (!response.ok) throw new Error("Server rejected request");
-        alert("Auto apply script started! Please check the server terminal to proceed.");
-      } catch (e) {
-        alert("Failed to start auto apply. Is the API server running on port 3001?");
-      }
+      alert("Auto apply script triggered in backend (mocked for frontend demo).");
     }, 1500);
   };
 
