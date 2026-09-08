@@ -1,90 +1,49 @@
-# Indeed Auto-Apply Job Board
+# Jobnova Take-Home Challenge
 
-This repository contains the completed submission for the Jobnova (Liba Space) Full Stack Software Engineer (AI Application) challenge. It features an interactive, mobile-responsive (H5) recommendation dashboard paired with a Playwright-based browser automation pipeline for Indeed applications.
+This repository contains both the frontend UI and the backend automation module for the Jobnova AI agent take-home challenge.
 
----
+## Overall Architecture
 
-## 📂 Project Architecture
+The project is structured as a monorepo consisting of three main parts:
+1. **Frontend (`/client`)**: A React/Vite application styled with Tailwind CSS and animated with Framer Motion. It acts as the user-facing job board.
+2. **Backend Automation (`/indeed-automation-test`)**: A Node.js module utilizing Playwright to securely manage browser sessions and execute automated interactions on Indeed.com.
+3. **API Bridge (`server.js`)**: A lightweight Express.js server in the root directory that connects the frontend to the backend. When a user clicks "Auto Apply" on the frontend, the bridge triggers the Playwright script.
 
-The repository is organized as a monorepo pairing a headless browser automation worker with an interactive Vite SPA:
+The primary database for this MVP is a shared local file: `client/public/applications.json`. The frontend polls this file to display job details and statuses, while the backend script reads from and writes to it to update the status of ongoing applications.
 
-```text
-indeed-auto-apply-job-board/
-├── apply.js                  # Playwright automation queue processor
-├── login.js                  # One-time authenticated session generator
-├── package.json              # Root dependencies & automation scripts
-├── playwright/
-│   └── .auth/
-│       └── auth.json         # Persisted storageState (session cookies/local storage)
-└── client/                   # Vite + React Frontend SPA
-    ├── public/
-    │   └── applications.json # Central JSON datastore (synced with automation worker)
-    ├── src/
-    │   ├── App.tsx           # Master-detail recommendation dashboard & polling logic
-    │   └── index.css         # Tailwind CSS styling
-    ├── package.json          # Client dependencies
-    └── vite.config.ts        # Vite configuration
-```
+## How to Run
 
----
+1. **Install Root Dependencies** (Express bridge):
+   ```bash
+   npm install
+   ```
+2. **Install Frontend Dependencies**:
+   ```bash
+   cd client && npm install && cd ..
+   ```
+3. **Install Backend Dependencies**:
+   ```bash
+   cd indeed-automation-test && npm install && npx playwright install chromium && cd ..
+   ```
 
-## 🏗 System Design & Tech Stack
+**To start the full stack (Frontend + API Bridge):**
+Run `npm run dev` from the root directory. This will start the React app on `http://localhost:5173` and the API bridge on `http://localhost:3001`.
 
-### Frontend (Dashboard & Recommendation Hub)
-* **Framework:** React 18 + Vite (TypeScript)
-* **Styling:** Tailwind CSS (utility-first, responsive H5 adaptation for mobile screens)
-* **Architecture:** Master-Detail inspector featuring category filter tabs, full-text role search, bookmarking, and match score metrics.
-* **Live Synchronization:** The UI reads from `public/applications.json` via continuous polling and manual state synchronization to reflect real-time automation state transitions (`pending` → `in_progress` → `manual_action_required` → `submitted`).
+## Backend Architecture Details
 
-### Backend (Browser Automation & Worker)
-* **Engine:** Playwright (Node.js)
-* **Session Persistence:** Uses Playwright's `storageState` API (`playwright/.auth/auth.json`) to persist authentication tokens and cookies, bypassing repeated login steps.
-* **Human-in-the-Loop Safeguards:** Implements terminal-driven interactive pauses via Node.js `readline`. If multi-factor authentication, security challenges, or complex screening questionnaires occur, the script flags `manual_action_required`, alerts the user, and resumes once verified.
-* **State Persistence:** Directly reads and writes application lifecycle status into the shared JSON datastore.
+### Session Storage and Restoration
+To satisfy the requirement of securely saving and restoring the Indeed login session without keeping the browser running continuously, the backend uses Playwright's `storageState` feature.
+- The `login.js` script allows the user to manually log in and complete any initial 2FA/CAPTCHA. Once logged in, it saves the cookies and local storage tokens to `playwright/.auth/auth.json`.
+- The `apply.js` script subsequently initializes new browser contexts using this `auth.json` file. This securely injects the authenticated session into the headless browser, allowing it to bypass the login screen entirely on subsequent runs.
 
----
+### Handling Manual Verification and Failures
+The automation script is designed with a "human-in-the-loop" philosophy to ensure compliance with Indeed's security mechanisms.
+- **Failures:** If a job link is broken or the initial "Apply" button cannot be found within the timeout period, the script catches the error, marks the job status as `failed` in the JSON file, and cleanly proceeds to the next job in the queue.
+- **Manual Verification:** The script navigates through standard application forms automatically (by looking for 'Continue' or 'Next' buttons). However, if it encounters an unfamiliar dynamic question, a CAPTCHA, or reaches the final "Review your application" step, it pauses execution and prompts the user via the terminal (`process.stdin`). The user can manually review the application in the open browser window, solve any challenges, and then press ENTER in the terminal to resume or finalize the automation flow. If left incomplete, the job is marked as `manual_action_required`.
 
-## 🚀 Getting Started
-
-### Prerequisites
-* **Node.js**: v18.0.0 or higher
-* **npm**: v9.0.0 or higher
-
-### 1. Install Dependencies
-
-Install root backend dependencies and Playwright browsers:
-```bash
-npm install
-npx playwright install chromium
-```
-
-Install frontend client dependencies:
-```bash
-cd client
-npm install
-cd ..
-```
-
-### 2. Run the Application
-
-#### Step A: Launch the Frontend Dashboard
-Open a terminal in the `client` directory and start the Vite development server:
-```bash
-cd client
-npm run dev
-```
-Navigate to the local URL provided (typically `http://localhost:5173` or `http://localhost:5177`) to view the interactive recommendation board.
-
-#### Step B: Establish Session (First Time Only)
-To capture a persistent authenticated session without triggering anti-bot protections:
-```bash
-node login.js
-```
-Complete login in the visible Chromium window. The session will automatically save to `playwright/.auth/auth.json`.
-
-#### Step C: Run Application Queue
-In your root terminal, execute the automation worker:
-```bash
-node apply.js
-```
-Watch the console output and browser execution. The React dashboard will update its status badges and queue statistics dynamically as applications progress.
+### Extending the Solution for Multiple Users
+While this is a minimal MVP for a single user, the architecture can be extended for multi-tenant production use:
+1. **Database:** Replace the `applications.json` file with a robust relational database (e.g., PostgreSQL). Tables would include `Users`, `Jobs`, and `Applications` (mapping users to jobs with statuses).
+2. **Session Management:** Instead of a single local `auth.json` file, user session states (cookies/tokens) would be serialized and stored securely in a database (e.g., Redis or encrypted PostgreSQL fields) linked to the user's ID. When a background worker picks up an auto-apply task for User A, it retrieves User A's specific storage state and initializes the Playwright context with it.
+3. **Queueing System:** Replace the linear `for` loop in `apply.js` with a message queue (e.g., RabbitMQ, Celery, or BullMQ). Frontend requests would enqueue "Apply" jobs. Background workers would pull from the queue, allowing concurrent applications across hundreds of users.
+4. **Proxy Rotation:** To run headless browsers at scale for multiple users, requests must be routed through residential proxies to avoid rate-limiting and IP bans from the platform.
