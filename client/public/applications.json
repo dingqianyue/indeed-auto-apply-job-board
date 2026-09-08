@@ -4,12 +4,15 @@
     "status": "pending",
     "title": "Software Engineer",
     "company": "DMAero, LLC",
-    "location": "512 South Houston Lake Road, Warner Robins, GA 31088",
+    "location": "Warner Robins, GA",
     "matchScore": 65,
-    "salary": "$75,000 - $110,000 a year",
+    "salary": "$75,000 - $110,000",
     "jobType": "Full-time",
-    "experience": "Entry/Mid level",
-    "tags": ["C/C++", "Linux", "Defense"],
+    "experienceLevel": "Mid level",
+    "experienceYears": "2+ years",
+    "postedHoursAgo": 4,
+    "applicantCount": 45,
+    "saved": false,
     "benefits": [
       { "icon": "🎓", "title": "Paid training", "description": "Continuous learning opportunities." },
       { "icon": "🛠️", "title": "On-the-job training", "description": "Hands-on experience." },
@@ -24,7 +27,7 @@
       "founded": "Unknown",
       "size": "Unknown",
       "website": "dmaero.com",
-      "description": "DMAero, LLC is a mission-focused, ISO 9001:2015-certified engineering firm delivering high-impact engineering solutions to the U.S. Department of Defense. With locations in Warner Robins, GA; Byron, GA; and Boise, ID, we specialize in embedded systems development, hardware/software integration, and full lifecycle sustainment support.",
+      "description": "DMAero, LLC is a mission-focused, ISO 9001:2015-certified engineering firm delivering high-impact engineering solutions to the U.S. Department of Defense.",
       "location": "Warner Robins, GA"
     },
     "whyYouMatch": {
@@ -37,38 +40,34 @@
         "No prior experience with avionics or military systems."
       ]
     },
-    "description": "We are seeking a motivated Software Engineer to join our engineering team in Warner Robins, GA and contribute to the development of next-generation military avionics, mission computing systems, and aircraft modifications. This Software Engineer will design, develop, integrate, test, and maintain software supporting aerospace and defense platforms.",
+    "description": "We are seeking a motivated Software Engineer to join our engineering team in Warner Robins, GA and contribute to the development of next-generation military avionics, mission computing systems, and aircraft modifications.",
     "responsibilities": [
       "Design, develop, test, and maintain software for aerospace and defense applications",
       "Develop software primarily in C and C++",
       "Develop and maintain Linux-based embedded applications",
-      "Troubleshoot software and hardware integration issues",
-      "Participate in software architecture and system design activities",
-      "Develop automated test software and diagnostic utilities",
-      "Support integration and verification testing in laboratory and aircraft environments",
-      "Debug software using industry-standard development tools"
+      "Troubleshoot software and hardware integration issues"
     ],
     "qualifications": [
       "Bachelor's degree in Software Engineering or related technical field",
       "Strong Linux operating system knowledge and experience",
       "Experience programming in C and/or C++",
-      "Experience developing software in Linux environments",
-      "U.S. Citizenship",
-      "Ability to obtain and maintain a U.S. Secret Security Clearance"
-    ],
-    "aboutCompany": "DMAero, LLC is a mission-focused, ISO 9001:2015-certified engineering firm delivering high-impact engineering solutions to the U.S. Department of Defense."
+      "U.S. Citizenship"
+    ]
   },
   {
     "url": "https://www.indeed.com/viewjob?jk=43db0fee933b6487",
     "status": "in_progress",
     "title": "Junior Software Engineer",
     "company": "HOUSEMAX FUNDING LLC",
-    "location": "3711 S Mopac Expy Bldg 2, Austin, TX 78746",
+    "location": "Austin, TX",
     "matchScore": 92,
-    "salary": "Not specified",
+    "salary": "$90,000 - $115,000",
     "jobType": "Full-time",
-    "experience": "0-2 years",
-    "tags": ["Next.js", "Supabase", "Python", "SQL"],
+    "experienceLevel": "Entry level",
+    "experienceYears": "0-2 years",
+    "postedHoursAgo": 12,
+    "applicantCount": 128,
+    "saved": true,
     "benefits": [
       { "icon": "🏥", "title": "Health insurance", "description": "Medical, dental, and vision coverage." },
       { "icon": "🌴", "title": "Paid time off", "description": "Generous PTO." },
@@ -89,80 +88,66 @@
         "Familiarity with Supabase and relational databases like PostgreSQL.",
         "Proficiency in Python and SQL for data integration tasks."
       ],
-      "cons": [
-        "May require learning some specific real estate domain knowledge."
-      ]
+      "cons": []
     },
-    "description": "HouseMax Funding is seeking a Junior Software Engineer to help build and support the technology that drives our real estate lending operations. In this role, you will be responsible for developing and maintaining internal applications, supporting the data infrastructure that powers key business functions, and contributing to innovative solutions leveraging modern web technologies and LLMs.",
+    "description": "HouseMax Funding is seeking a Junior Software Engineer to help build and support the technology that drives our real estate lending operations.",
     "responsibilities": [
       "Build and maintain features for our internal applications using Next.js, Supabase, and Vercel",
-      "Implement bug fixes, enhancements, and new functionality from defined specs and tickets",
-      "Provide production support in a fast-paced real estate environment",
-      "Develop and maintain APIs to support application functionality and data integrations",
-      "Maintain existing data ingestion jobs (Python, SQL Server) during team absences and as needed",
-      "Write and maintain SQL queries supporting reporting and data operations"
+      "Implement bug fixes, enhancements, and new functionality",
+      "Provide production support in a fast-paced real estate environment"
     ],
     "qualifications": [
-      "Bachelor’s degree in Computer Science, Software Engineering, Data Science, or a related field",
-      "0-2+ years of experience in software engineering, data engineering, analytics, database management, or API development",
-      "Understanding of the software development lifecycle (SDLC) and modern development practices",
-      "Experience building, maintaining, or contributing to web-based applications",
-      "Strong analytical, problem-solving, and communication skills"
-    ],
-    "aboutCompany": "HouseMax Funding is a staple of the real estate investment community."
+      "Bachelor’s degree in Computer Science, Software Engineering",
+      "0-2+ years of experience in software engineering",
+      "Experience building, maintaining, or contributing to web-based applications"
+    ]
   },
   {
     "url": "https://www.indeed.com/viewjob?jk=d0f6746ba5cbc7ea",
     "status": "submitted",
     "title": "Junior Software Engineer",
     "company": "PSI Services LLC",
-    "location": "18000 West 105th Street, Olathe, KS 66061",
+    "location": "Olathe, KS",
     "matchScore": 85,
-    "salary": "$75,000 a year",
-    "jobType": "Permanent, Full-time",
-    "experience": "0-2 years",
-    "tags": ["Java", "JavaScript", "React"],
+    "salary": "$75,000",
+    "jobType": "Full-time",
+    "experienceLevel": "Entry level",
+    "experienceYears": "0-2 years",
+    "postedHoursAgo": 24,
+    "applicantCount": 215,
+    "saved": false,
     "benefits": [
       { "icon": "🏦", "title": "401(k)", "description": "Retirement savings plan." },
       { "icon": "🏥", "title": "Health insurance", "description": "Medical coverage." },
-      { "icon": "🌴", "title": "Paid time off", "description": "Enhanced paid time off/annual leave policies." },
-      { "icon": "🦷", "title": "Dental insurance", "description": "Dental coverage." },
-      { "icon": "👁️", "title": "Vision insurance", "description": "Vision coverage." },
-      { "icon": "💳", "title": "Flexible spending account", "description": "Pre-tax flexible spending accounts." },
-      { "icon": "🤝", "title": "Employee assistance program", "description": "Confidential support whenever you need it." }
+      { "icon": "🌴", "title": "Paid time off", "description": "Enhanced paid time off policies." }
     ],
     "companyInfo": {
       "name": "PSI Services LLC",
       "founded": "Unknown",
       "size": "Unknown",
       "website": "psionline.com",
-      "description": "At PSI, we believe that people achieve their best when they feel they truly belong. That’s why fairness and opportunity are at the heart of everything we do - not just words, but values deeply embedded in our culture and the full employee experience.",
+      "description": "At PSI, we believe that people achieve their best when they feel they truly belong.",
       "location": "Olathe, KS"
     },
     "whyYouMatch": {
       "pros": [
         "Strong knowledge of Java and JavaScript/TypeScript.",
-        "Experience with React.js frontend development.",
-        "Experience with relational databases (PostgreSQL/MySQL)."
+        "Experience with React.js frontend development."
       ],
       "cons": [
-        "Might require learning some specific proprietary enterprise tools."
+        "Might require learning specific enterprise tools."
       ]
     },
-    "description": "The Junior Software Engineer role at PSI is an entry-level position designed to support the development, maintenance, and enhancement of PSI’s technology platforms. Junior Software Engineers focus on report creation, data accuracy, system maintenance, and foundational software engineering tasks while building core technical skills.",
+    "description": "The Junior Software Engineer role at PSI is an entry-level position designed to support the development, maintenance, and enhancement of PSI’s technology platforms.",
     "responsibilities": [
-      "Create, maintain, and enhance standard and ad-hoc reports to support business and operational needs.",
+      "Create, maintain, and enhance standard and ad-hoc reports",
       "Validate data accuracy and completeness across reports and systems.",
-      "Support existing web applications by performing minor enhancements, bug fixes, and configuration updates.",
-      "Contribute code to existing applications under guidance, following established standards and best practices.",
-      "Assist with testing activities, including unit testing and regression testing.",
-      "Participate in Agile ceremonies such as stand-ups, sprint planning, and retrospectives."
+      "Support existing web applications by performing minor enhancements"
     ],
     "qualifications": [
-      "Bachelor’s degree in Computer Science, Information Systems, or a related field",
-      "0–2 years of experience in a software engineering, reporting, or technical support role.",
-      "Hands-on experience with modern software development languages and front-end technologies, e.g. Java, JavaScript, Spring Boot, Thymeleaf, Spring MVC, .net, Go, React, Angular, CSS, HTML etc."
-    ],
-    "aboutCompany": "Join Us at PSI - Where You Belong, Grow, and Thrive!"
+      "Bachelor’s degree in Computer Science, Information Systems",
+      "0–2 years of experience in a software engineering role",
+      "Hands-on experience with modern software development languages"
+    ]
   }
 ]

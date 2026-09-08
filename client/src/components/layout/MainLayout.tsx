@@ -1,9 +1,15 @@
-import { useState } from "react";
+import { useState } from 'react';
 import type { ReactNode } from 'react';
 import { Sidebar } from './Sidebar';
 import { Menu, X } from 'lucide-react';
 
-export function MainLayout({ children }: { children: ReactNode }) {
+interface MainLayoutProps {
+  children: ReactNode;
+  activeView: 'recommended' | 'applied' | 'saved';
+  setActiveView: (view: 'recommended' | 'applied' | 'saved') => void;
+}
+
+export function MainLayout({ children, activeView, setActiveView }: MainLayoutProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -34,7 +40,7 @@ export function MainLayout({ children }: { children: ReactNode }) {
         fixed inset-y-0 left-0 z-30 transform transition-transform duration-300 ease-in-out bg-white md:relative md:translate-x-0
         ${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}
       `}>
-        <Sidebar onClose={() => setMobileMenuOpen(false)} />
+        <Sidebar onClose={() => setMobileMenuOpen(false)} activeView={activeView} setActiveView={setActiveView} />
       </div>
 
       <main className="flex-1 flex flex-col min-w-0 overflow-hidden pt-16 md:pt-0">
