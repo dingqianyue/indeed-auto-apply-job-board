@@ -5,7 +5,7 @@
     "title": "Associate AI Software Engineer",
     "company": "Asure Software",
     "location": "Addison, TX 75001",
-    "matchScore": 95,
+    "matchScore": 96,
     "salary": "$80,000 a year",
     "jobType": "Full-time",
     "experienceLevel": "Entry/Mid level",
@@ -30,11 +30,13 @@
     },
     "whyYouMatch": {
       "pros": [
-        "Strong alignment with Python and AI/ML libraries (PyTorch, TensorFlow).",
-        "Experience with cloud environments (AWS).",
-        "Familiar with NoSQL databases (MongoDB)."
+        "Strong backend integration skills demonstrated in the Trip Planner app using Python, pandas, and AWS.",
+        "Solid API design and security experience from building a RESTful backend for the Crowdfunding App.",
+        "Demonstrated capability of working with NoSQL (MongoDB in Crowdfunding app) fitting the AI data requirements."
       ],
-      "cons": []
+      "cons": [
+        "Lacks direct professional exposure to LLM orchestration frameworks (LangChain, MCP)."
+      ]
     },
     "description": "As an Associate AI Software Engineer, you will work alongside experienced engineers and AI practitioners to design, develop, test, and maintain AI-powered software that supports Asure's products and platform services. In this role you will primarily write Python and build features that integrate large language models (LLMs) and other AI services into real applications running in our AWS cloud environment.",
     "responsibilities": [
@@ -58,7 +60,7 @@
     "title": "Junior Software Engineer",
     "company": "HOUSEMAX FUNDING LLC",
     "location": "3711 S Mopac Expy Bldg 2, Austin, TX 78746",
-    "matchScore": 92,
+    "matchScore": 91,
     "salary": "Not specified",
     "jobType": "Full-time",
     "experienceLevel": "Entry level",
@@ -82,12 +84,12 @@
     },
     "whyYouMatch": {
       "pros": [
-        "Strong experience with React.js and modern JavaScript/TypeScript.",
-        "Familiarity with Supabase and relational databases like PostgreSQL.",
-        "Proficiency in Python and SQL for data integration tasks."
+        "Extensive full-stack experience (React, Node.js) developed in the Trip Planner and Crowdfunding projects.",
+        "Proven ability managing relational data and SQL optimization (PostgreSQL) from the Trip Planner app.",
+        "Experienced with cloud deployments (AWS, Vercel) matching the Next.js/Vercel stack requirement."
       ],
       "cons": [
-        "May require learning some specific real estate domain knowledge."
+        "May require learning some specific real estate lending domain knowledge."
       ]
     },
     "description": "HouseMax Funding is seeking a Junior Software Engineer to help build and support the technology that drives our real estate lending operations.",
@@ -109,7 +111,7 @@
     "title": "Entry-level Software Developer",
     "company": "IXRF Systems",
     "location": "10421 Old Manchaca Road, Austin, TX 78748",
-    "matchScore": 90,
+    "matchScore": 87,
     "salary": "From $80,000 a year",
     "jobType": "Full-time",
     "experienceLevel": "Entry level",
@@ -134,11 +136,12 @@
     },
     "whyYouMatch": {
       "pros": [
-        "Strong C/C++ foundation matches core language requirements.",
-        "Educational background supports analytical problem solving."
+        "Deep C++ systems experience demonstrated in the PennCloud distributed storage project.",
+        "Ability to tackle complex problems algorithmically, shown by custom TCP/IP and load balancer implementations."
       ],
       "cons": [
-        "May need to learn Windows GUI frameworks (MFC)."
+        "Lacks specific experience with Windows GUI frameworks (MFC).",
+        "No prior background interacting directly with laboratory or hardware equipment APIs."
       ]
     },
     "description": "This is a great opportunity for an early-career developer who wants to grow in a hands-on, technical environment. You will work closely with engineers and scientists to help build, test, maintain, and improve software used in scientific instruments.",
@@ -161,7 +164,7 @@
     "title": "Junior Software Engineer",
     "company": "PSI Services LLC",
     "location": "18000 West 105th Street, Olathe, KS 66061",
-    "matchScore": 88,
+    "matchScore": 82,
     "salary": "$75,000 a year",
     "jobType": "Full-time",
     "experienceLevel": "Entry level",
@@ -184,11 +187,11 @@
     },
     "whyYouMatch": {
       "pros": [
-        "Strong knowledge of Java and JavaScript/TypeScript.",
-        "Experience with React.js frontend development."
+        "Strong Java and RESTful API experience from building the Crowdfunding app with 100% test coverage.",
+        "Experienced in React and JavaScript frontend work shown in the Trip Planner app."
       ],
       "cons": [
-        "Might require learning specific enterprise tools."
+        "Might require learning specific proprietary enterprise tools like Thymeleaf or Spring MVC."
       ]
     },
     "description": "The Junior Software Engineer role at PSI is an entry-level position designed to support the development, maintenance, and enhancement of PSI’s technology platforms.",
@@ -210,7 +213,7 @@
     "title": "Software Engineer",
     "company": "DMAero, LLC",
     "location": "512 South Houston Lake Road, Warner Robins, GA 31088",
-    "matchScore": 65,
+    "matchScore": 45,
     "salary": "$75,000 - $110,000 a year",
     "jobType": "Full-time",
     "experienceLevel": "Mid level",
@@ -237,12 +240,10 @@
     },
     "whyYouMatch": {
       "pros": [
-        "Strong foundation in C/C++ programming.",
-        "Experience with Python scripting."
+        "Experience in C/C++ gained through the PennCloud systems project."
       ],
       "cons": [
-        "Lacks specific experience with Linux-based embedded applications.",
-        "No prior experience with avionics or military systems."
+        "Significant mismatch: Lacks specific experience with Linux-based embedded applications, real-time operating systems (RTOS), and avionics communication protocols (MIL-STD-1553)."
       ]
     },
     "description": "We are seeking a motivated Software Engineer to join our engineering team in Warner Robins, GA and contribute to the development of next-generation military avionics, mission computing systems, and aircraft modifications.",

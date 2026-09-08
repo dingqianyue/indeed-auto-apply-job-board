@@ -41,32 +41,35 @@ export function JobDetail({ job, onToggleSave }: JobDetailProps) {
       >
         {/* Header Section */}
         <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-6 mb-8 border-b border-gray-100 pb-8">
-          <div className="flex gap-4 sm:gap-5 flex-1">
+          <div className="flex gap-4 sm:gap-5 flex-1 min-w-0">
             <MatchRing score={job.matchScore} size="lg" />
-            <div className="pt-1 w-full">
-              <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">{job.title}</h1>
-              <div className="flex flex-wrap items-center gap-2 text-sm sm:text-base text-gray-600 mb-4">
-                <span className="font-medium text-gray-900">{job.company}</span>
+            <div className="pt-1 min-w-0 flex-1">
+              {/* Job title is slightly smaller and forced to one line with truncation */}
+              <h1 className="text-xl sm:text-[22px] font-bold text-gray-900 mb-2 truncate" title={job.title}>
+                {job.title}
+              </h1>
+              <div className="flex flex-wrap items-center gap-2 text-sm text-gray-600 mb-4">
+                <span className="font-medium text-gray-900 truncate max-w-[200px]">{job.company}</span>
                 <span className="w-1 h-1 rounded-full bg-gray-300 hidden sm:inline-block"></span>
-                <span className="flex items-center gap-1.5">
-                  <MapPin className="w-4 h-4 text-gray-400" /> {job.location}
+                <span className="flex items-center gap-1.5 truncate max-w-[250px]">
+                  <MapPin className="w-3.5 h-3.5 text-gray-400 shrink-0" /> {job.location}
                 </span>
               </div>
 
-              {/* Added detail tags row mimicking JobCard tags */}
-              <div className="flex flex-wrap gap-2 mb-3">
+              {/* Detail tags forced to one line using flex-nowrap and overflow-x-auto, hiding scrollbar */}
+              <div className="flex flex-nowrap overflow-x-auto gap-2 mb-3 pb-1 no-scrollbar items-center">
                 {tags.map((tag, i) => (
-                  <span key={i} className="bg-gray-50 text-gray-700 text-sm font-medium px-3 py-1 rounded-md border border-gray-200">
+                  <span key={i} className="bg-gray-50 text-gray-700 text-sm font-medium px-3 py-1 rounded-md border border-gray-200 whitespace-nowrap">
                     {tag}
                   </span>
                 ))}
               </div>
 
-              {/* Added meta info row */}
+              {/* Meta info row */}
               <div className="text-sm text-gray-500 flex items-center gap-2">
-                <span>Posted {job.postedHoursAgo} hours ago</span>
+                <span className="whitespace-nowrap">Posted {job.postedHoursAgo} hours ago</span>
                 <span>•</span>
-                <span>{job.applicantCount} applicants</span>
+                <span className="whitespace-nowrap">{job.applicantCount} applicants</span>
               </div>
             </div>
           </div>
