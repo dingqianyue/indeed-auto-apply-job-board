@@ -14,8 +14,16 @@ export default function App() {
 
   const fetchJobs = useCallback(async () => {
     try {
-      const response = await fetch('/applications.json');
-      const data = await response.json();
+      // Add a timestamp cache buster to prevent browser from caching the JSON
+      const response = await fetch(`/applications.json?t=${Date.now()}`);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const text = await response.text();
+      if (!text) return; // Ignore empty responses during write locks
+
+      const data = JSON.parse(text);
 
       // Merge with local state to preserve "saved" status across polls if we wanted to,
       // but for this take-home we just rely on updating the state directly here.
