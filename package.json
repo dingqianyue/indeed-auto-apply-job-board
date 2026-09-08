@@ -1,0 +1,21 @@
+{
+  "name": "indeed-auto-apply-job-board",
+  "version": "1.0.0",
+  "scripts": {
+    "install-all": "npm install && npx playwright install",
+    "start-frontend": "vite dev",
+    "start-backend": "npx tsx scripts/apply.ts",
+    "dev": "concurrently \"npm run start-frontend\" \"npm run start-backend\"",
+    "setup-and-start": "npm run install-all && npm run dev"
+  },
+  "devDependencies": {
+    "@types/node": "^26.5.0",
+    "concurrently": "^8.2.2",
+    "playwright": "^1.63.0",
+    "tsx": "^4.23.13",
+    "vite": "^5.1.4"
+  },
+  "dependencies": {
+    "lucide-react": "^1.42.0"
+  }
+}
