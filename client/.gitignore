@@ -1,3 +1,7 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
 # Logs
 logs
 *.log
@@ -7,16 +11,30 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Vite & React Build Output
+dist/
+dist-ssr/
+build/
+.vite/
 
-# Editor directories and files
+# Playwright & Automation
+playwright/.auth/
+playwright-report/
+test-results/
+blob-report/
+
+# Environment Variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS & Editor Files
+.DS_Store
 .vscode/*
 !.vscode/extensions.json
 .idea
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
