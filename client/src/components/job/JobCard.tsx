@@ -31,8 +31,10 @@ export function JobCard({ job, isSelected, onClick, onToggleSave }: JobCardProps
       }`}
     >
       <div className="flex gap-4 sm:gap-5 items-start">
-        {/* Match Ring on far left */}
-        <MatchRing score={job.matchScore} size="sm" />
+        {/* Match Ring on far left, sized 'md' to be bigger per user request */}
+        <div className="pt-1">
+          <MatchRing score={job.matchScore} size="md" />
+        </div>
 
         <div className="flex-1 min-w-0">
           <div className="flex justify-between items-start mb-1.5">
@@ -43,7 +45,7 @@ export function JobCard({ job, isSelected, onClick, onToggleSave }: JobCardProps
             {/* Heart Button for saving */}
             <button
               onClick={onToggleSave}
-              className="text-gray-400 hover:text-red-500 transition-colors p-1 -mr-1 rounded-full hover:bg-red-50 focus:outline-none"
+              className="text-gray-400 hover:text-red-500 transition-colors p-1 -mr-1 rounded-full hover:bg-red-50 focus:outline-none shrink-0"
             >
               <Heart className={`w-5 h-5 ${job.saved ? 'fill-red-500 text-red-500' : ''}`} />
             </button>
@@ -62,9 +64,9 @@ export function JobCard({ job, isSelected, onClick, onToggleSave }: JobCardProps
           </div>
 
           <div className="text-xs text-gray-500 flex items-center gap-2">
-            <span>Posted {job.postedHoursAgo } hours ago</span>
+            <span>Posted {job.postedHoursAgo} hours ago</span>
             <span>•</span>
-            <span>{job.applicantCount } applicants</span>
+            <span>{job.applicantCount} applicants</span>
           </div>
         </div>
       </div>

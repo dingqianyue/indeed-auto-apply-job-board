@@ -22,6 +22,13 @@ export function JobDetail({ job, onToggleSave }: JobDetailProps) {
     }, 1500);
   };
 
+  // Build tags strictly ordered: [Full-time/Part-time, Years of Experience, Entry/Mid level, Salary]
+  const tags = [];
+  if (job.jobType) tags.push(job.jobType);
+  if (job.experienceYears) tags.push(job.experienceYears);
+  if (job.experienceLevel) tags.push(job.experienceLevel);
+  if (job.salary && job.salary !== 'Not specified') tags.push(job.salary);
+
   return (
     <AnimatePresence mode="wait">
       <motion.div
@@ -36,14 +43,30 @@ export function JobDetail({ job, onToggleSave }: JobDetailProps) {
         <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-6 mb-8 border-b border-gray-100 pb-8">
           <div className="flex gap-4 sm:gap-5 flex-1">
             <MatchRing score={job.matchScore} size="lg" />
-            <div className="pt-1">
+            <div className="pt-1 w-full">
               <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">{job.title}</h1>
-              <div className="flex flex-wrap items-center gap-2 text-sm sm:text-base text-gray-600 mb-2">
+              <div className="flex flex-wrap items-center gap-2 text-sm sm:text-base text-gray-600 mb-4">
                 <span className="font-medium text-gray-900">{job.company}</span>
                 <span className="w-1 h-1 rounded-full bg-gray-300 hidden sm:inline-block"></span>
                 <span className="flex items-center gap-1.5">
                   <MapPin className="w-4 h-4 text-gray-400" /> {job.location}
                 </span>
+              </div>
+
+              {/* Added detail tags row mimicking JobCard tags */}
+              <div className="flex flex-wrap gap-2 mb-3">
+                {tags.map((tag, i) => (
+                  <span key={i} className="bg-gray-50 text-gray-700 text-sm font-medium px-3 py-1 rounded-md border border-gray-200">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {/* Added meta info row */}
+              <div className="text-sm text-gray-500 flex items-center gap-2">
+                <span>Posted {job.postedHoursAgo} hours ago</span>
+                <span>•</span>
+                <span>{job.applicantCount} applicants</span>
               </div>
             </div>
           </div>
@@ -64,8 +87,12 @@ export function JobDetail({ job, onToggleSave }: JobDetailProps) {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={handleApply}
-                disabled={isApplying}
-                className="flex-[2] sm:flex-none flex items-center justify-center gap-2 px-4 sm:px-6 py-2 sm:py-2.5 bg-indigo-600 rounded-lg text-sm font-medium text-white hover:bg-indigo-700 transition-colors shadow-sm disabled:opacity-70 disabled:cursor-not-allowed"
+                disabled={isApplying || job.status !== 'pending'}
+                className={`flex-[2] sm:flex-none flex items-center justify-center gap-2 px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg text-sm font-medium text-white transition-colors shadow-sm ${
+                  job.status !== 'pending'
+                    ? 'bg-green-600 hover:bg-green-700 cursor-not-allowed'
+                    : 'bg-indigo-600 hover:bg-indigo-700 disabled:opacity-70 disabled:cursor-not-allowed'
+                }`}
               >
                  {isApplying ? (
                    <motion.div
@@ -76,7 +103,7 @@ export function JobDetail({ job, onToggleSave }: JobDetailProps) {
                  ) : (
                    <CheckCircle2 className="w-4 h-4" />
                  )}
-                 {isApplying ? 'Applying...' : 'Auto Apply'}
+                 {job.status !== 'pending' ? 'Applied' : isApplying ? 'Applying...' : 'Auto Apply'}
               </motion.button>
             </div>
           </div>
@@ -138,7 +165,7 @@ export function JobDetail({ job, onToggleSave }: JobDetailProps) {
 
         <CompanyInfoSection companyInfo={{...job.companyInfo, location: job.location} as any} companyName={job.company} />
 
-        {/* Fixed Bottom Action Bar (if needed, simplified for desktop view) */}
+        {/* Fixed Bottom Action Bar */}
         <div className="border-t border-gray-100 pt-6 mt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
            <div className="text-sm text-gray-500 flex items-center gap-2">
              <span>Status:</span>

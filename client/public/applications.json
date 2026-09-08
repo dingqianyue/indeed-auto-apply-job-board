@@ -1,12 +1,217 @@
 [
   {
+    "url": "https://www.indeed.com/viewjob?jk=aad7eaf60ccf42f2",
+    "status": "pending",
+    "title": "Associate AI Software Engineer",
+    "company": "Asure Software",
+    "location": "Addison, TX 75001",
+    "matchScore": 95,
+    "salary": "$80,000 a year",
+    "jobType": "Full-time",
+    "experienceLevel": "Entry/Mid level",
+    "experienceYears": "0-2+ years",
+    "postedHoursAgo": 2,
+    "applicantCount": 89,
+    "saved": false,
+    "benefits": [
+      { "icon": "📈", "title": "Employee stock purchase plan", "description": "Stock purchase program." },
+      { "icon": "🏥", "title": "Health insurance", "description": "Medical, Dental, Vision." },
+      { "icon": "🌴", "title": "Paid time off", "description": "Self-Managed PTO." },
+      { "icon": "💳", "title": "Health savings account", "description": "HSA options." },
+      { "icon": "🏦", "title": "401(k)", "description": "401K Program with 3% safe harbor contribution." }
+    ],
+    "companyInfo": {
+      "name": "Asure Software",
+      "founded": "Unknown",
+      "size": "600+ employees",
+      "website": "asuresoftware.com",
+      "description": "Our HCM platform empowers more than 100,000 clients to build great teams and better manage their people while staying compliant in an ever-changing HR legislative landscape.",
+      "location": "Addison, TX"
+    },
+    "whyYouMatch": {
+      "pros": [
+        "Strong alignment with Python and AI/ML libraries (PyTorch, TensorFlow).",
+        "Experience with cloud environments (AWS).",
+        "Familiar with NoSQL databases (MongoDB)."
+      ],
+      "cons": []
+    },
+    "description": "As an Associate AI Software Engineer, you will work alongside experienced engineers and AI practitioners to design, develop, test, and maintain AI-powered software that supports Asure's products and platform services. In this role you will primarily write Python and build features that integrate large language models (LLMs) and other AI services into real applications running in our AWS cloud environment.",
+    "responsibilities": [
+      "Collaborate with engineers and stakeholders to build AI-powered software features.",
+      "Write clean, maintainable, well-tested Python code for applications, services, and APIs.",
+      "Integrate large language models (LLMs) and AI services into software applications.",
+      "Assist with prompt design, experimentation, evaluation, and validation of LLM-based features.",
+      "Contribute to data pipelines and retrieval components (e.g., embeddings and vector search)."
+    ],
+    "qualifications": [
+      "Bachelor's or Master's degree in Computer Science, AI, or related field.",
+      "Proficiency in Python.",
+      "Foundational understanding of artificial intelligence, machine learning, or generative AI concepts.",
+      "Familiarity with at least one major cloud platform (AWS preferred)."
+    ],
+    "aboutCompany": "To provide Human Capital Management (HCM) software and services that help companies grow, while nurturing a culture of growth around us."
+  },
+  {
+    "url": "https://www.indeed.com/viewjob?jk=43db0fee933b6487",
+    "status": "pending",
+    "title": "Junior Software Engineer",
+    "company": "HOUSEMAX FUNDING LLC",
+    "location": "3711 S Mopac Expy Bldg 2, Austin, TX 78746",
+    "matchScore": 92,
+    "salary": "Not specified",
+    "jobType": "Full-time",
+    "experienceLevel": "Entry level",
+    "experienceYears": "0-2 years",
+    "postedHoursAgo": 12,
+    "applicantCount": 128,
+    "saved": true,
+    "benefits": [
+      { "icon": "🏥", "title": "Health insurance", "description": "Medical, dental, and vision coverage." },
+      { "icon": "🌴", "title": "Paid time off", "description": "Generous PTO." },
+      { "icon": "🦷", "title": "Dental insurance", "description": "Coverage for dental care." },
+      { "icon": "👁️", "title": "Vision insurance", "description": "Coverage for vision care." }
+    ],
+    "companyInfo": {
+      "name": "HOUSEMAX FUNDING LLC",
+      "founded": "Unknown",
+      "size": "Unknown",
+      "website": "housemaxfunding.com",
+      "description": "HouseMax Funding is a staple of the real estate investment community. As a premier hard money lender, we are known for speed, reliability, and deep market expertise.",
+      "location": "Austin, TX"
+    },
+    "whyYouMatch": {
+      "pros": [
+        "Strong experience with React.js and modern JavaScript/TypeScript.",
+        "Familiarity with Supabase and relational databases like PostgreSQL.",
+        "Proficiency in Python and SQL for data integration tasks."
+      ],
+      "cons": [
+        "May require learning some specific real estate domain knowledge."
+      ]
+    },
+    "description": "HouseMax Funding is seeking a Junior Software Engineer to help build and support the technology that drives our real estate lending operations.",
+    "responsibilities": [
+      "Build and maintain features for our internal applications using Next.js, Supabase, and Vercel",
+      "Implement bug fixes, enhancements, and new functionality",
+      "Provide production support in a fast-paced real estate environment"
+    ],
+    "qualifications": [
+      "Bachelor’s degree in Computer Science, Software Engineering",
+      "0-2+ years of experience in software engineering",
+      "Experience building, maintaining, or contributing to web-based applications"
+    ],
+    "aboutCompany": "HouseMax Funding is a staple of the real estate investment community."
+  },
+  {
+    "url": "https://www.indeed.com/viewjob?jk=77895585bfca19f1",
+    "status": "pending",
+    "title": "Entry-level Software Developer",
+    "company": "IXRF Systems",
+    "location": "10421 Old Manchaca Road, Austin, TX 78748",
+    "matchScore": 90,
+    "salary": "From $80,000 a year",
+    "jobType": "Full-time",
+    "experienceLevel": "Entry level",
+    "experienceYears": "0-2 years",
+    "postedHoursAgo": 5,
+    "applicantCount": 62,
+    "saved": false,
+    "benefits": [
+      { "icon": "🏦", "title": "401(k)", "description": "401(k) matching." },
+      { "icon": "🏥", "title": "Health insurance", "description": "Medical coverage." },
+      { "icon": "🌴", "title": "Paid time off", "description": "Generous PTO." },
+      { "icon": "🦷", "title": "Dental insurance", "description": "Coverage for dental care." },
+      { "icon": "👁️", "title": "Vision insurance", "description": "Coverage for vision care." }
+    ],
+    "companyInfo": {
+      "name": "IXRF Systems",
+      "founded": "Unknown",
+      "size": "Unknown",
+      "website": "ixrfsystems.com",
+      "description": "At IXRF Systems, we design and manufacture stand-alone high-end X-ray microanalysis systems.",
+      "location": "Austin, TX"
+    },
+    "whyYouMatch": {
+      "pros": [
+        "Strong C/C++ foundation matches core language requirements.",
+        "Educational background supports analytical problem solving."
+      ],
+      "cons": [
+        "May need to learn Windows GUI frameworks (MFC)."
+      ]
+    },
+    "description": "This is a great opportunity for an early-career developer who wants to grow in a hands-on, technical environment. You will work closely with engineers and scientists to help build, test, maintain, and improve software used in scientific instruments.",
+    "responsibilities": [
+      "Help develop, test, and improve software features for X-ray microanalysis applications.",
+      "Debug issues, investigate root causes, and think through practical solutions.",
+      "Support continuous integration and long-term product quality.",
+      "Assist with refactoring legacy code."
+    ],
+    "qualifications": [
+      "Degree in Computer Science, Software Engineering, or a related field",
+      "Basic understanding of software engineering fundamentals and OOP.",
+      "Experience with C++ or a strong interest in learning it."
+    ],
+    "aboutCompany": "Our work sits at the intersection of software, hardware, and science."
+  },
+  {
+    "url": "https://www.indeed.com/viewjob?jk=d0f6746ba5cbc7ea",
+    "status": "pending",
+    "title": "Junior Software Engineer",
+    "company": "PSI Services LLC",
+    "location": "18000 West 105th Street, Olathe, KS 66061",
+    "matchScore": 88,
+    "salary": "$75,000 a year",
+    "jobType": "Full-time",
+    "experienceLevel": "Entry level",
+    "experienceYears": "0-2 years",
+    "postedHoursAgo": 24,
+    "applicantCount": 215,
+    "saved": false,
+    "benefits": [
+      { "icon": "🏦", "title": "401(k)", "description": "Retirement savings plan." },
+      { "icon": "🏥", "title": "Health insurance", "description": "Medical coverage." },
+      { "icon": "🌴", "title": "Paid time off", "description": "Enhanced paid time off policies." }
+    ],
+    "companyInfo": {
+      "name": "PSI Services LLC",
+      "founded": "Unknown",
+      "size": "Unknown",
+      "website": "psionline.com",
+      "description": "At PSI, we believe that people achieve their best when they feel they truly belong.",
+      "location": "Olathe, KS"
+    },
+    "whyYouMatch": {
+      "pros": [
+        "Strong knowledge of Java and JavaScript/TypeScript.",
+        "Experience with React.js frontend development."
+      ],
+      "cons": [
+        "Might require learning specific enterprise tools."
+      ]
+    },
+    "description": "The Junior Software Engineer role at PSI is an entry-level position designed to support the development, maintenance, and enhancement of PSI’s technology platforms.",
+    "responsibilities": [
+      "Create, maintain, and enhance standard and ad-hoc reports",
+      "Validate data accuracy and completeness across reports and systems.",
+      "Support existing web applications by performing minor enhancements"
+    ],
+    "qualifications": [
+      "Bachelor’s degree in Computer Science, Information Systems",
+      "0–2 years of experience in a software engineering role",
+      "Hands-on experience with modern software development languages"
+    ],
+    "aboutCompany": "Join Us at PSI - Where You Belong, Grow, and Thrive!"
+  },
+  {
     "url": "https://www.indeed.com/viewjob?jk=cb22df43b690dbb0",
     "status": "pending",
     "title": "Software Engineer",
     "company": "DMAero, LLC",
-    "location": "Warner Robins, GA",
+    "location": "512 South Houston Lake Road, Warner Robins, GA 31088",
     "matchScore": 65,
-    "salary": "$75,000 - $110,000",
+    "salary": "$75,000 - $110,000 a year",
     "jobType": "Full-time",
     "experienceLevel": "Mid level",
     "experienceYears": "2+ years",
@@ -52,102 +257,7 @@
       "Strong Linux operating system knowledge and experience",
       "Experience programming in C and/or C++",
       "U.S. Citizenship"
-    ]
-  },
-  {
-    "url": "https://www.indeed.com/viewjob?jk=43db0fee933b6487",
-    "status": "in_progress",
-    "title": "Junior Software Engineer",
-    "company": "HOUSEMAX FUNDING LLC",
-    "location": "Austin, TX",
-    "matchScore": 92,
-    "salary": "$90,000 - $115,000",
-    "jobType": "Full-time",
-    "experienceLevel": "Entry level",
-    "experienceYears": "0-2 years",
-    "postedHoursAgo": 12,
-    "applicantCount": 128,
-    "saved": true,
-    "benefits": [
-      { "icon": "🏥", "title": "Health insurance", "description": "Medical, dental, and vision coverage." },
-      { "icon": "🌴", "title": "Paid time off", "description": "Generous PTO." },
-      { "icon": "🦷", "title": "Dental insurance", "description": "Coverage for dental care." },
-      { "icon": "👁️", "title": "Vision insurance", "description": "Coverage for vision care." }
     ],
-    "companyInfo": {
-      "name": "HOUSEMAX FUNDING LLC",
-      "founded": "Unknown",
-      "size": "Unknown",
-      "website": "housemaxfunding.com",
-      "description": "HouseMax Funding is a staple of the real estate investment community. As a premier hard money lender, we are known for speed, reliability, and deep market expertise.",
-      "location": "Austin, TX"
-    },
-    "whyYouMatch": {
-      "pros": [
-        "Strong experience with React.js and modern JavaScript/TypeScript.",
-        "Familiarity with Supabase and relational databases like PostgreSQL.",
-        "Proficiency in Python and SQL for data integration tasks."
-      ],
-      "cons": []
-    },
-    "description": "HouseMax Funding is seeking a Junior Software Engineer to help build and support the technology that drives our real estate lending operations.",
-    "responsibilities": [
-      "Build and maintain features for our internal applications using Next.js, Supabase, and Vercel",
-      "Implement bug fixes, enhancements, and new functionality",
-      "Provide production support in a fast-paced real estate environment"
-    ],
-    "qualifications": [
-      "Bachelor’s degree in Computer Science, Software Engineering",
-      "0-2+ years of experience in software engineering",
-      "Experience building, maintaining, or contributing to web-based applications"
-    ]
-  },
-  {
-    "url": "https://www.indeed.com/viewjob?jk=d0f6746ba5cbc7ea",
-    "status": "submitted",
-    "title": "Junior Software Engineer",
-    "company": "PSI Services LLC",
-    "location": "Olathe, KS",
-    "matchScore": 85,
-    "salary": "$75,000",
-    "jobType": "Full-time",
-    "experienceLevel": "Entry level",
-    "experienceYears": "0-2 years",
-    "postedHoursAgo": 24,
-    "applicantCount": 215,
-    "saved": false,
-    "benefits": [
-      { "icon": "🏦", "title": "401(k)", "description": "Retirement savings plan." },
-      { "icon": "🏥", "title": "Health insurance", "description": "Medical coverage." },
-      { "icon": "🌴", "title": "Paid time off", "description": "Enhanced paid time off policies." }
-    ],
-    "companyInfo": {
-      "name": "PSI Services LLC",
-      "founded": "Unknown",
-      "size": "Unknown",
-      "website": "psionline.com",
-      "description": "At PSI, we believe that people achieve their best when they feel they truly belong.",
-      "location": "Olathe, KS"
-    },
-    "whyYouMatch": {
-      "pros": [
-        "Strong knowledge of Java and JavaScript/TypeScript.",
-        "Experience with React.js frontend development."
-      ],
-      "cons": [
-        "Might require learning specific enterprise tools."
-      ]
-    },
-    "description": "The Junior Software Engineer role at PSI is an entry-level position designed to support the development, maintenance, and enhancement of PSI’s technology platforms.",
-    "responsibilities": [
-      "Create, maintain, and enhance standard and ad-hoc reports",
-      "Validate data accuracy and completeness across reports and systems.",
-      "Support existing web applications by performing minor enhancements"
-    ],
-    "qualifications": [
-      "Bachelor’s degree in Computer Science, Information Systems",
-      "0–2 years of experience in a software engineering role",
-      "Hands-on experience with modern software development languages"
-    ]
+    "aboutCompany": "DMAero, LLC is a mission-focused, ISO 9001:2015-certified engineering firm delivering high-impact engineering solutions to the U.S. Department of Defense."
   }
 ]
