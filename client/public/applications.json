@@ -67,7 +67,7 @@
     "experienceYears": "0-2 years",
     "postedHoursAgo": 12,
     "applicantCount": 128,
-    "saved": true,
+    "saved": false,
     "benefits": [
       { "icon": "🏥", "title": "Health insurance", "description": "Medical, dental, and vision coverage." },
       { "icon": "🌴", "title": "Paid time off", "description": "Generous PTO." },

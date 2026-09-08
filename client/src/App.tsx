@@ -76,7 +76,7 @@ export default function App() {
     if (activeView === 'saved') {
       return job.saved;
     }
-    return true; // recommended shows all (or mock recommendation logic)
+    return job.status === 'pending'; // recommended only shows pending jobs
   });
 
   return (

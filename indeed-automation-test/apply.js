@@ -24,6 +24,31 @@ async function writeDB(data) {
   await fs.writeFile(DB_PATH, JSON.stringify(data, null, 2));
 }
 
+// Helper to wait for either terminal input or page closure
+async function waitForManualAction(page, promptMessage) {
+  return new Promise((resolve) => {
+    let resolved = false;
+
+    const handleClose = () => {
+      if (!resolved) {
+        resolved = true;
+        console.log("\n[Browser window was closed by the user.]");
+        resolve('closed');
+      }
+    };
+
+    page.on('close', handleClose);
+
+    rl.question(promptMessage, (answer) => {
+      if (!resolved) {
+        resolved = true;
+        page.off('close', handleClose);
+        resolve('continued');
+      }
+    });
+  });
+}
+
 async function runAutoApply() {
   const targetUrl = process.argv[2];
   if (!targetUrl) {
@@ -99,32 +124,52 @@ async function runAutoApply() {
             console.log("Please review your information in the browser window.");
             console.log("You can manually click the Submit button, or close the window.");
             
-            await new Promise((resolve) => {
-              rl.question('\nPress ENTER in this terminal when you are done...', resolve);
-            });
+            const action = await waitForManualAction(page, '\nPress ENTER in this terminal when you are done...');
+            if (action === 'closed') {
+              console.log("Aborting application flow since the window was closed.");
+              applicationDone = false; // or we can treat as manual_action_required
+              break;
+            }
 
             applicationDone = true;
             break;
           }
 
           // 2. Broaden the "Continue" check to catch variations like "Next" or "Review your details"
-          const continueBtn = page.getByRole('button', { name: /continue|next|review/i }).filter({ hasNotText: /submit/i }).first();
-          if (await continueBtn.isVisible()) {
-            const btnText = await continueBtn.innerText();
+          const continueBtnLocator = page.getByRole('button', { name: /continue|next|review/i }).filter({ hasNotText: /submit/i }).first();
+          if (await continueBtnLocator.isVisible()) {
+            // Get an ElementHandle to the specific button instance
+            const continueBtnHandle = await continueBtnLocator.elementHandle();
+            const btnText = await continueBtnLocator.innerText();
             console.log(`Step ${step + 1}: Found '${btnText.trim()}' button. Clicking...`);
-            // force: true bypasses invisible loading overlays that might block the click
-            await continueBtn.click({ force: true });
 
-            // After clicking continue, check if it's still visible after a short delay
-            // (meaning we didn't advance, likely due to a required field)
+            // force: true bypasses invisible loading overlays that might block the click
+            await continueBtnLocator.click({ force: true });
+
+            // After clicking continue, check if the EXACT SAME button is still attached to the DOM after a short delay
+            // (meaning we didn't advance to the next step, likely due to a required field)
             await page.waitForTimeout(2000);
-            if (await continueBtn.isVisible()) {
+
+            let isStillAttached = false;
+            try {
+              if (continueBtnHandle) {
+                 isStillAttached = await page.evaluate(node => document.body.contains(node), continueBtnHandle);
+              }
+            } catch (e) {
+              // If evaluate fails (e.g. context destroyed), it means we definitely advanced
+              isStillAttached = false;
+            }
+
+            if (isStillAttached) {
               console.log("\n*** PAUSED: REQUIRED FIELD MISSING ***");
               console.log("The page did not advance after clicking continue.");
               console.log("Please fill in the required fields manually in the browser.");
-              await new Promise((resolve) => {
-                rl.question('\nPress ENTER in this terminal when you have filled the fields and want the script to continue...', resolve);
-              });
+
+              const action = await waitForManualAction(page, '\nPress ENTER in this terminal when you have filled the fields and want the script to continue...');
+              if (action === 'closed') {
+                console.log("Window closed during manual field entry. Aborting.");
+                break;
+              }
 
               // We decrement step so we retry this same page
               step--;
@@ -145,9 +190,13 @@ async function runAutoApply() {
           // If we reach here, no standard navigation buttons were found
           console.log("\n*** AUTOMATION STUCK ON DYNAMIC QUESTION ***");
           console.log("No continue/submit button found. Please navigate manually.");
-          await new Promise((resolve) => {
-            rl.question('\nPress ENTER in this terminal when you are done with this step...', resolve);
-          });
+
+          const action = await waitForManualAction(page, '\nPress ENTER in this terminal when you are done with this step...');
+          if (action === 'closed') {
+            console.log("Window closed on dynamic question. Aborting.");
+            break;
+          }
+
           // Decrement step to check again
           step--;
           continue;
@@ -157,12 +206,10 @@ async function runAutoApply() {
           console.log("Application flow handled!");
           job.status = 'submitted';
         } else {
-          console.log("Please complete the remaining questions in the browser.");
-          
-          await new Promise((resolve) => {
-            rl.question('\nPress ENTER in this terminal when you are done, or to cancel...', resolve);
-          });
-          
+          if (!page.isClosed()) {
+            console.log("Please complete the remaining questions in the browser.");
+            await waitForManualAction(page, '\nPress ENTER in this terminal when you are done, or to cancel...');
+          }
           job.status = 'manual_action_required';
         }
 
