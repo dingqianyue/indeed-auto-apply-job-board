@@ -110,10 +110,20 @@ export default function App() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 20 }}
                 transition={{ duration: 0.2 }}
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={{ left: 0, right: 0.5 }}
+                onDragEnd={(_e, info) => {
+                  // Swipe right to go back
+                  if (info.offset.x > 100 && info.velocity.x > 200) {
+                    handleBack();
+                  }
+                }}
+                className="h-full flex flex-col"
               >
                 <button
                   onClick={handleBack}
-                  className="mb-4 flex items-center gap-2 text-gray-600 font-medium text-sm hover:text-gray-900 bg-white px-4 py-2 rounded-lg shadow-sm border border-gray-200 w-fit transition-colors"
+                  className="mb-4 flex items-center gap-2 text-gray-600 font-medium text-sm hover:text-gray-900 bg-white px-4 py-2 rounded-lg shadow-sm border border-gray-200 w-fit transition-colors shrink-0"
                 >
                   <ArrowLeft className="w-5 h-5" />
                   Back to {activeView} Jobs

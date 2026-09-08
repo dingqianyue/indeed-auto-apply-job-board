@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "playwright": "^1.63.0"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"

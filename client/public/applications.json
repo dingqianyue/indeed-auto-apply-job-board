@@ -1,7 +1,7 @@
 [
   {
     "url": "https://www.indeed.com/viewjob?jk=aad7eaf60ccf42f2",
-    "status": "pending",
+    "status": "failed",
     "title": "Associate AI Software Engineer",
     "company": "Asure Software",
     "location": "Addison, TX",
@@ -14,11 +14,31 @@
     "applicantCount": 89,
     "saved": false,
     "benefits": [
-      { "icon": "📈", "title": "Employee stock purchase plan", "description": "Stock purchase program." },
-      { "icon": "🏥", "title": "Health insurance", "description": "Medical, Dental, Vision." },
-      { "icon": "🌴", "title": "Paid time off", "description": "Self-Managed PTO." },
-      { "icon": "💳", "title": "Health savings account", "description": "HSA options." },
-      { "icon": "🏦", "title": "401(k)", "description": "401K Program with 3% safe harbor contribution." }
+      {
+        "icon": "📈",
+        "title": "Employee stock purchase plan",
+        "description": "Stock purchase program."
+      },
+      {
+        "icon": "🏥",
+        "title": "Health insurance",
+        "description": "Medical, Dental, Vision."
+      },
+      {
+        "icon": "🌴",
+        "title": "Paid time off",
+        "description": "Self-Managed PTO."
+      },
+      {
+        "icon": "💳",
+        "title": "Health savings account",
+        "description": "HSA options."
+      },
+      {
+        "icon": "🏦",
+        "title": "401(k)",
+        "description": "401K Program with 3% safe harbor contribution."
+      }
     ],
     "companyInfo": {
       "name": "Asure Software",
@@ -56,7 +76,7 @@
   },
   {
     "url": "https://www.indeed.com/viewjob?jk=43db0fee933b6487",
-    "status": "pending",
+    "status": "failed",
     "title": "Junior Software Engineer",
     "company": "HOUSEMAX FUNDING LLC",
     "location": "Austin, TX",
@@ -69,10 +89,26 @@
     "applicantCount": 128,
     "saved": true,
     "benefits": [
-      { "icon": "🏥", "title": "Health insurance", "description": "Medical, dental, and vision coverage." },
-      { "icon": "🌴", "title": "Paid time off", "description": "Generous PTO." },
-      { "icon": "🦷", "title": "Dental insurance", "description": "Coverage for dental care." },
-      { "icon": "👁️", "title": "Vision insurance", "description": "Coverage for vision care." }
+      {
+        "icon": "🏥",
+        "title": "Health insurance",
+        "description": "Medical, dental, and vision coverage."
+      },
+      {
+        "icon": "🌴",
+        "title": "Paid time off",
+        "description": "Generous PTO."
+      },
+      {
+        "icon": "🦷",
+        "title": "Dental insurance",
+        "description": "Coverage for dental care."
+      },
+      {
+        "icon": "👁️",
+        "title": "Vision insurance",
+        "description": "Coverage for vision care."
+      }
     ],
     "companyInfo": {
       "name": "HOUSEMAX FUNDING LLC",
@@ -107,7 +143,7 @@
   },
   {
     "url": "https://www.indeed.com/viewjob?jk=77895585bfca19f1",
-    "status": "pending",
+    "status": "failed",
     "title": "Entry-level Software Developer",
     "company": "IXRF Systems",
     "location": "Austin, TX",
@@ -120,11 +156,31 @@
     "applicantCount": 62,
     "saved": false,
     "benefits": [
-      { "icon": "🏦", "title": "401(k)", "description": "401(k) matching." },
-      { "icon": "🏥", "title": "Health insurance", "description": "Medical coverage." },
-      { "icon": "🌴", "title": "Paid time off", "description": "Generous PTO." },
-      { "icon": "🦷", "title": "Dental insurance", "description": "Coverage for dental care." },
-      { "icon": "👁️", "title": "Vision insurance", "description": "Coverage for vision care." }
+      {
+        "icon": "🏦",
+        "title": "401(k)",
+        "description": "401(k) matching."
+      },
+      {
+        "icon": "🏥",
+        "title": "Health insurance",
+        "description": "Medical coverage."
+      },
+      {
+        "icon": "🌴",
+        "title": "Paid time off",
+        "description": "Generous PTO."
+      },
+      {
+        "icon": "🦷",
+        "title": "Dental insurance",
+        "description": "Coverage for dental care."
+      },
+      {
+        "icon": "👁️",
+        "title": "Vision insurance",
+        "description": "Coverage for vision care."
+      }
     ],
     "companyInfo": {
       "name": "IXRF Systems",
@@ -160,7 +216,7 @@
   },
   {
     "url": "https://www.indeed.com/viewjob?jk=d0f6746ba5cbc7ea",
-    "status": "pending",
+    "status": "failed",
     "title": "Junior Software Engineer",
     "company": "PSI Services LLC",
     "location": "Olathe, KS",
@@ -173,9 +229,21 @@
     "applicantCount": 215,
     "saved": false,
     "benefits": [
-      { "icon": "🏦", "title": "401(k)", "description": "Retirement savings plan." },
-      { "icon": "🏥", "title": "Health insurance", "description": "Medical coverage." },
-      { "icon": "🌴", "title": "Paid time off", "description": "Enhanced paid time off policies." }
+      {
+        "icon": "🏦",
+        "title": "401(k)",
+        "description": "Retirement savings plan."
+      },
+      {
+        "icon": "🏥",
+        "title": "Health insurance",
+        "description": "Medical coverage."
+      },
+      {
+        "icon": "🌴",
+        "title": "Paid time off",
+        "description": "Enhanced paid time off policies."
+      }
     ],
     "companyInfo": {
       "name": "PSI Services LLC",
@@ -209,7 +277,7 @@
   },
   {
     "url": "https://www.indeed.com/viewjob?jk=cb22df43b690dbb0",
-    "status": "pending",
+    "status": "failed",
     "title": "Software Engineer",
     "company": "DMAero, LLC",
     "location": "Warner Robins, GA",
@@ -222,13 +290,41 @@
     "applicantCount": 45,
     "saved": false,
     "benefits": [
-      { "icon": "🎓", "title": "Paid training", "description": "Continuous learning opportunities." },
-      { "icon": "🛠️", "title": "On-the-job training", "description": "Hands-on experience." },
-      { "icon": "📚", "title": "Tuition reimbursement", "description": "Support for continuing education." },
-      { "icon": "🎖️", "title": "Military leave", "description": "Support for those serving." },
-      { "icon": "👶", "title": "Parental leave", "description": "Time off for new parents." },
-      { "icon": "🏦", "title": "401(k)", "description": "Retirement savings plan." },
-      { "icon": "🏥", "title": "Health insurance", "description": "Comprehensive medical coverage." }
+      {
+        "icon": "🎓",
+        "title": "Paid training",
+        "description": "Continuous learning opportunities."
+      },
+      {
+        "icon": "🛠️",
+        "title": "On-the-job training",
+        "description": "Hands-on experience."
+      },
+      {
+        "icon": "📚",
+        "title": "Tuition reimbursement",
+        "description": "Support for continuing education."
+      },
+      {
+        "icon": "🎖️",
+        "title": "Military leave",
+        "description": "Support for those serving."
+      },
+      {
+        "icon": "👶",
+        "title": "Parental leave",
+        "description": "Time off for new parents."
+      },
+      {
+        "icon": "🏦",
+        "title": "401(k)",
+        "description": "Retirement savings plan."
+      },
+      {
+        "icon": "🏥",
+        "title": "Health insurance",
+        "description": "Comprehensive medical coverage."
+      }
     ],
     "companyInfo": {
       "name": "DMAero, LLC",

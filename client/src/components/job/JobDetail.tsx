@@ -13,13 +13,30 @@ interface JobDetailProps {
 
 export function JobDetail({ job, onToggleSave }: JobDetailProps) {
   const [isApplying, setIsApplying] = useState(false);
+  const [toastMessage, setToastMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null);
 
-  const handleApply = () => {
+  const handleApply = async () => {
     setIsApplying(true);
-    setTimeout(() => {
+    try {
+      const response = await fetch('http://localhost:3001/api/apply', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url: job.url })
+      });
+      const data = await response.json();
+
+      if (!response.ok) {
+        setToastMessage({ type: 'error', text: data.error || 'Failed to start auto-apply script' });
+      } else {
+        setToastMessage({ type: 'success', text: data.message });
+      }
+    } catch (err) {
+      console.error(err);
+      setToastMessage({ type: 'error', text: 'Error triggering backend. Is the server running?' });
+    } finally {
       setIsApplying(false);
-      alert("Auto apply script triggered in backend (mocked for frontend demo).");
-    }, 1500);
+      setTimeout(() => setToastMessage(null), 4000);
+    }
   };
 
   // Build tags strictly ordered: [Full-time/Part-time, Years of Experience, Entry/Mid level, Salary]
@@ -167,6 +184,22 @@ export function JobDetail({ job, onToggleSave }: JobDetailProps) {
         )}
 
         <CompanyInfoSection companyInfo={{...job.companyInfo, location: job.location} as any} companyName={job.company} />
+
+        {/* Toast Notification */}
+        <AnimatePresence>
+          {toastMessage && (
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 50 }}
+              className={`fixed bottom-20 left-1/2 -translate-x-1/2 px-6 py-3 rounded-xl shadow-lg text-sm font-medium text-white z-50 whitespace-nowrap ${
+                toastMessage.type === 'error' ? 'bg-red-600' : 'bg-gray-900'
+              }`}
+            >
+              {toastMessage.text}
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Fixed Bottom Action Bar */}
         <div className="border-t border-gray-100 pt-6 mt-8 flex flex-col sm:flex-row justify-between items-center gap-4">

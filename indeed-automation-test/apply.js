@@ -29,7 +29,7 @@ async function runAutoApply() {
   
   console.log("Launching browser with saved session...");
   const browser = await chromium.launch({ 
-    headless: false, 
+    headless: process.env.CI ? true : false,
     channel: 'chrome',
     args: [
       '--disable-blink-features=AutomationControlled', 

@@ -26,6 +26,7 @@ app.post('/api/apply', (req, res) => {
   // For now, the script processes all "pending" jobs.
   const child = spawn('node', ['apply.js'], {
     cwd: path.join(__dirname, 'indeed-automation-test'),
+    env: { ...process.env, CI: 'true' }, // Force headless mode for the testing environment
     stdio: 'inherit' // Pipes output to the terminal where this server is running
   });
 

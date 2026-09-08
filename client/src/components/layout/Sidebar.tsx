@@ -21,7 +21,15 @@ export function Sidebar({ onClose, activeView, setActiveView }: SidebarProps) {
   };
 
   return (
-    <aside className="flex flex-col w-64 bg-white border-r border-gray-200 h-screen py-6 px-4 shrink-0 shadow-xl md:shadow-none">
+    <aside className="flex flex-col w-64 md:w-64 max-w-[80vw] bg-white border-r border-gray-200 h-screen py-6 px-4 shrink-0 shadow-xl md:shadow-none relative">
+      {/* Mobile close button inside the sidebar (optional, but good UX) */}
+      <button
+        onClick={onClose}
+        className="md:hidden absolute top-4 right-4 p-2 text-gray-500 hover:bg-gray-100 rounded-md"
+      >
+        <span className="sr-only">Close sidebar</span>
+      </button>
+
       <div className="hidden md:flex items-center gap-2 mb-10 px-2">
         <div className="w-8 h-8 rounded bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold text-lg">
           J
