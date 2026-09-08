@@ -2,133 +2,167 @@
   {
     "url": "https://www.indeed.com/viewjob?jk=cb22df43b690dbb0",
     "status": "pending",
-    "title": "Senior UX/UI Designer",
-    "company": "Kforce",
-    "location": "Madison, WI",
-    "matchScore": 94,
-    "salary": "$115,000 - $130,000",
-    "jobType": "Full time",
-    "experience": "Mid-Senior level",
-    "tags": ["Remote Flexibility", "Equity Options", "Mental Wellness"],
+    "title": "Software Engineer",
+    "company": "DMAero, LLC",
+    "location": "512 South Houston Lake Road, Warner Robins, GA 31088",
+    "matchScore": 65,
+    "salary": "$75,000 - $110,000 a year",
+    "jobType": "Full-time",
+    "experience": "Entry/Mid level",
+    "tags": ["C/C++", "Linux", "Defense"],
     "benefits": [
-      { "icon": "🏠", "title": "Remote Flexibility", "description": "Work from wherever you're most productive and happy." },
-      { "icon": "📈", "title": "Equity Options", "description": "Become a shareholder through our stock options plan after 6 months." },
-      { "icon": "💳", "title": "Meal Vouchers", "description": "Enjoy an €8/day meal voucher to make your lunch break even better." },
-      { "icon": "🍴", "title": "Lunch at the Office", "description": "If you're in Bologna, we have lunch together at the office, and it is on us!" },
-      { "icon": "🏥", "title": "Health Coverage", "description": "Comprehensive support through the Metasalute Health Assistance Fund." },
-      { "icon": "🎂", "title": "Birthday Bliss", "description": "Celebrate your day with an extra day off, just for you." },
-      { "icon": "🧠", "title": "Mental Wellness", "description": "Free access to iFeel, our psychological support platform." },
-      { "icon": "🌍", "title": "International Environment", "description": "Grow your language skills while working with a diverse and global team." }
+      { "icon": "🎓", "title": "Paid training", "description": "Continuous learning opportunities." },
+      { "icon": "🛠️", "title": "On-the-job training", "description": "Hands-on experience." },
+      { "icon": "📚", "title": "Tuition reimbursement", "description": "Support for continuing education." },
+      { "icon": "🎖️", "title": "Military leave", "description": "Support for those serving." },
+      { "icon": "👶", "title": "Parental leave", "description": "Time off for new parents." },
+      { "icon": "🏦", "title": "401(k)", "description": "Retirement savings plan." },
+      { "icon": "🏥", "title": "Health insurance", "description": "Comprehensive medical coverage." }
     ],
     "companyInfo": {
-      "name": "Kforce",
-      "founded": "1979",
-      "size": "1001-5000 employees",
-      "website": "kforce.com",
-      "description": "Kforce has a client that is seeking a UI/UX Developer in Madison, WI. Overview: In brief, we a handful of AI-powered tools for our workforce which could use a facelift to improve the overall user experience. In an ideal scenario, we would love to bring on someone that has the skills to work directly in our codebases (engineering skills) while they make improvements to the UI/UX based on their knowledge of best practices. We currently have three tools that users are interacting with; one is an Edge browser extension (JavaScript), one is using Streamlit web application (python currently but we'd be open to migrating this to some React/Angular/other framework), and the other is a basic React web application."
+      "name": "DMAero, LLC",
+      "founded": "Unknown",
+      "size": "Unknown",
+      "website": "dmaero.com",
+      "description": "DMAero, LLC is a mission-focused, ISO 9001:2015-certified engineering firm delivering high-impact engineering solutions to the U.S. Department of Defense. With locations in Warner Robins, GA; Byron, GA; and Boise, ID, we specialize in embedded systems development, hardware/software integration, and full lifecycle sustainment support.",
+      "location": "Warner Robins, GA"
     },
     "whyYouMatch": {
       "pros": [
-        "Strong experience in React web applications matching their requirements.",
-        "Solid background in UI/UX improvements and best practices.",
-        "Previous work involving JavaScript browser extensions."
+        "Strong foundation in C/C++ programming.",
+        "Experience with Python scripting."
       ],
       "cons": [
-        "Limited experience with Python/Streamlit."
+        "Lacks specific experience with Linux-based embedded applications.",
+        "No prior experience with avionics or military systems."
       ]
     },
-    "description": "We are looking for a Senior UI/UX Designer to join our dynamic team and help shape the future of our AI-powered tools.",
+    "description": "We are seeking a motivated Software Engineer to join our engineering team in Warner Robins, GA and contribute to the development of next-generation military avionics, mission computing systems, and aircraft modifications. This Software Engineer will design, develop, integrate, test, and maintain software supporting aerospace and defense platforms.",
     "responsibilities": [
-      "Collaborate directly in engineering codebases to improve UI/UX.",
-      "Redesign existing Edge browser extensions and web applications.",
-      "Work closely with product managers and engineers to ensure high-quality user experiences."
+      "Design, develop, test, and maintain software for aerospace and defense applications",
+      "Develop software primarily in C and C++",
+      "Develop and maintain Linux-based embedded applications",
+      "Troubleshoot software and hardware integration issues",
+      "Participate in software architecture and system design activities",
+      "Develop automated test software and diagnostic utilities",
+      "Support integration and verification testing in laboratory and aircraft environments",
+      "Debug software using industry-standard development tools"
     ],
     "qualifications": [
-      "5+ years of experience in UI/UX Design.",
-      "Proficiency in React and modern JavaScript.",
-      "Experience with AI-powered tool interfaces is a plus."
+      "Bachelor's degree in Software Engineering or related technical field",
+      "Strong Linux operating system knowledge and experience",
+      "Experience programming in C and/or C++",
+      "Experience developing software in Linux environments",
+      "U.S. Citizenship",
+      "Ability to obtain and maintain a U.S. Secret Security Clearance"
     ],
-    "aboutCompany": "Kforce is a professional staffing services firm..."
+    "aboutCompany": "DMAero, LLC is a mission-focused, ISO 9001:2015-certified engineering firm delivering high-impact engineering solutions to the U.S. Department of Defense."
   },
   {
     "url": "https://www.indeed.com/viewjob?jk=43db0fee933b6487",
     "status": "in_progress",
-    "title": "Front End Developer",
+    "title": "Junior Software Engineer",
     "company": "HOUSEMAX FUNDING LLC",
-    "location": "Austin, TX",
-    "matchScore": 89,
-    "salary": "$90,000 - $110,000",
-    "jobType": "Full time",
-    "experience": "Mid level",
-    "tags": ["React", "TypeScript", "Tailwind"],
+    "location": "3711 S Mopac Expy Bldg 2, Austin, TX 78746",
+    "matchScore": 92,
+    "salary": "Not specified",
+    "jobType": "Full-time",
+    "experience": "0-2 years",
+    "tags": ["Next.js", "Supabase", "Python", "SQL"],
     "benefits": [
-      { "icon": "🏥", "title": "Health Coverage", "description": "Comprehensive health, dental, and vision." },
-      { "icon": "🌴", "title": "Unlimited PTO", "description": "Take time off when you need it." }
+      { "icon": "🏥", "title": "Health insurance", "description": "Medical, dental, and vision coverage." },
+      { "icon": "🌴", "title": "Paid time off", "description": "Generous PTO." },
+      { "icon": "🦷", "title": "Dental insurance", "description": "Coverage for dental care." },
+      { "icon": "👁️", "title": "Vision insurance", "description": "Coverage for vision care." }
     ],
     "companyInfo": {
       "name": "HOUSEMAX FUNDING LLC",
-      "founded": "2015",
-      "size": "51-200 employees",
+      "founded": "Unknown",
+      "size": "Unknown",
       "website": "housemaxfunding.com",
-      "description": "HouseMax Funding is a leading provider of short-term lending for real estate investors."
+      "description": "HouseMax Funding is a staple of the real estate investment community. As a premier hard money lender, we are known for speed, reliability, and deep market expertise.",
+      "location": "Austin, TX"
     },
     "whyYouMatch": {
       "pros": [
-        "Strong React and TypeScript skills."
+        "Strong experience with React.js and modern JavaScript/TypeScript.",
+        "Familiarity with Supabase and relational databases like PostgreSQL.",
+        "Proficiency in Python and SQL for data integration tasks."
       ],
       "cons": [
-        "Location might require relocation."
+        "May require learning some specific real estate domain knowledge."
       ]
     },
-    "description": "We are looking for a Front End Developer to build highly responsive web applications.",
+    "description": "HouseMax Funding is seeking a Junior Software Engineer to help build and support the technology that drives our real estate lending operations. In this role, you will be responsible for developing and maintaining internal applications, supporting the data infrastructure that powers key business functions, and contributing to innovative solutions leveraging modern web technologies and LLMs.",
     "responsibilities": [
-      "Develop new user-facing features using React.js.",
-      "Build reusable components and front-end libraries for future use."
+      "Build and maintain features for our internal applications using Next.js, Supabase, and Vercel",
+      "Implement bug fixes, enhancements, and new functionality from defined specs and tickets",
+      "Provide production support in a fast-paced real estate environment",
+      "Develop and maintain APIs to support application functionality and data integrations",
+      "Maintain existing data ingestion jobs (Python, SQL Server) during team absences and as needed",
+      "Write and maintain SQL queries supporting reporting and data operations"
     ],
     "qualifications": [
-      "Strong proficiency in JavaScript, including DOM manipulation and the JavaScript object model.",
-      "Thorough understanding of React.js and its core principles."
+      "Bachelor’s degree in Computer Science, Software Engineering, Data Science, or a related field",
+      "0-2+ years of experience in software engineering, data engineering, analytics, database management, or API development",
+      "Understanding of the software development lifecycle (SDLC) and modern development practices",
+      "Experience building, maintaining, or contributing to web-based applications",
+      "Strong analytical, problem-solving, and communication skills"
     ],
-    "aboutCompany": "HouseMax Funding..."
+    "aboutCompany": "HouseMax Funding is a staple of the real estate investment community."
   },
   {
     "url": "https://www.indeed.com/viewjob?jk=d0f6746ba5cbc7ea",
     "status": "submitted",
-    "title": "Full Stack Software Engineer",
-    "company": "Jobnova",
-    "location": "Remote",
-    "matchScore": 98,
-    "salary": "$130,000 - $160,000",
-    "jobType": "Full time",
-    "experience": "Senior level",
-    "tags": ["AI", "React", "Node.js"],
+    "title": "Junior Software Engineer",
+    "company": "PSI Services LLC",
+    "location": "18000 West 105th Street, Olathe, KS 66061",
+    "matchScore": 85,
+    "salary": "$75,000 a year",
+    "jobType": "Permanent, Full-time",
+    "experience": "0-2 years",
+    "tags": ["Java", "JavaScript", "React"],
     "benefits": [
-      { "icon": "🏠", "title": "Remote Flexibility", "description": "Work from wherever you're most productive." },
-      { "icon": "📈", "title": "Equity Options", "description": "Stock options included." }
+      { "icon": "🏦", "title": "401(k)", "description": "Retirement savings plan." },
+      { "icon": "🏥", "title": "Health insurance", "description": "Medical coverage." },
+      { "icon": "🌴", "title": "Paid time off", "description": "Enhanced paid time off/annual leave policies." },
+      { "icon": "🦷", "title": "Dental insurance", "description": "Dental coverage." },
+      { "icon": "👁️", "title": "Vision insurance", "description": "Vision coverage." },
+      { "icon": "💳", "title": "Flexible spending account", "description": "Pre-tax flexible spending accounts." },
+      { "icon": "🤝", "title": "Employee assistance program", "description": "Confidential support whenever you need it." }
     ],
     "companyInfo": {
-      "name": "Jobnova",
-      "founded": "2023",
-      "size": "11-50 employees",
-      "website": "jobnova.ai",
-      "description": "Jobnova is an AI agent-driven future job infrastructure that automates how people discover, match, and apply for work."
+      "name": "PSI Services LLC",
+      "founded": "Unknown",
+      "size": "Unknown",
+      "website": "psionline.com",
+      "description": "At PSI, we believe that people achieve their best when they feel they truly belong. That’s why fairness and opportunity are at the heart of everything we do - not just words, but values deeply embedded in our culture and the full employee experience.",
+      "location": "Olathe, KS"
     },
     "whyYouMatch": {
       "pros": [
-        "Experience building AI agent applications.",
-        "Full stack capabilities matching the tech stack exactly."
+        "Strong knowledge of Java and JavaScript/TypeScript.",
+        "Experience with React.js frontend development.",
+        "Experience with relational databases (PostgreSQL/MySQL)."
       ],
-      "cons": []
+      "cons": [
+        "Might require learning some specific proprietary enterprise tools."
+      ]
     },
-    "description": "Join us in revolutionizing the job market with AI agents.",
+    "description": "The Junior Software Engineer role at PSI is an entry-level position designed to support the development, maintenance, and enhancement of PSI’s technology platforms. Junior Software Engineers focus on report creation, data accuracy, system maintenance, and foundational software engineering tasks while building core technical skills.",
     "responsibilities": [
-      "Build and maintain full stack AI applications.",
-      "Implement auto-apply workflows."
+      "Create, maintain, and enhance standard and ad-hoc reports to support business and operational needs.",
+      "Validate data accuracy and completeness across reports and systems.",
+      "Support existing web applications by performing minor enhancements, bug fixes, and configuration updates.",
+      "Contribute code to existing applications under guidance, following established standards and best practices.",
+      "Assist with testing activities, including unit testing and regression testing.",
+      "Participate in Agile ceremonies such as stand-ups, sprint planning, and retrospectives."
     ],
     "qualifications": [
-      "Experience with AI models and agents.",
-      "Strong Node.js and React background."
+      "Bachelor’s degree in Computer Science, Information Systems, or a related field",
+      "0–2 years of experience in a software engineering, reporting, or technical support role.",
+      "Hands-on experience with modern software development languages and front-end technologies, e.g. Java, JavaScript, Spring Boot, Thymeleaf, Spring MVC, .net, Go, React, Angular, CSS, HTML etc."
     ],
-    "aboutCompany": "We believe humans deserve better opportunities in the AI era!"
+    "aboutCompany": "Join Us at PSI - Where You Belong, Grow, and Thrive!"
   }
 ]

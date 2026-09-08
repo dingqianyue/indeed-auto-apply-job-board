@@ -4,29 +4,18 @@ import { JobList } from './components/job/JobList';
 import { JobDetail } from './components/job/JobDetail';
 import type { JobApplication } from './types';
 import { ArrowLeft } from 'lucide-react';
+import { AnimatePresence, motion } from 'framer-motion';
 
 export default function App() {
   const [jobs, setJobs] = useState<JobApplication[]>([]);
   const [selectedJob, setSelectedJob] = useState<JobApplication | null>(null);
   const [loading, setLoading] = useState(true);
-  const [isMobileDetailView, setIsMobileDetailView] = useState(false);
 
   const fetchJobs = useCallback(async () => {
     try {
       const response = await fetch('/applications.json');
       const data = await response.json();
       setJobs(data);
-      
-      // Use functional state updates to avoid unnecessary dependency on selectedJob
-      setSelectedJob(prevSelectedJob => {
-        if (!prevSelectedJob && data.length > 0) {
-          return data[0];
-        } else if (prevSelectedJob) {
-          const current = data.find((j: JobApplication) => j.url === prevSelectedJob.url);
-          return current || prevSelectedJob;
-        }
-        return null;
-      });
     } catch (error) {
       console.error("Failed to load applications.json", error);
     } finally {
@@ -42,7 +31,11 @@ export default function App() {
 
   const handleJobSelect = (job: JobApplication) => {
     setSelectedJob(job);
-    setIsMobileDetailView(true);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleBack = () => {
+    setSelectedJob(null);
   };
 
   if (loading) {
@@ -51,42 +44,48 @@ export default function App() {
 
   return (
     <MainLayout>
-      <div className="flex-1 flex overflow-hidden relative">
-        {/* List View - Hidden on mobile when viewing detail */}
-        <div className={`w-full md:w-auto h-full flex flex-col shrink-0 transition-transform ${isMobileDetailView ? 'hidden md:flex' : 'flex'}`}>
-          <JobList
-            jobs={jobs}
-            selectedJob={selectedJob}
-            onSelectJob={handleJobSelect}
-          />
-        </div>
-
-        {/* Detail View - Takes full width on mobile, right pane on desktop */}
-        <div className={`flex-1 bg-white overflow-hidden absolute md:relative inset-0 z-10 transition-transform transform ${isMobileDetailView ? 'translate-x-0' : 'translate-x-full md:translate-x-0'} md:block border-l border-gray-200 shadow-[rgba(0,0,0,0.02)_0px_0px_15px]`}>
-
-          {/* Mobile Back Button */}
-          {isMobileDetailView && (
-            <div className="md:hidden p-4 border-b border-gray-100 bg-white sticky top-0 z-20 flex items-center">
-               <button
-                onClick={() => setIsMobileDetailView(false)}
-                className="flex items-center gap-2 text-gray-600 font-medium text-sm hover:text-gray-900"
-               >
-                 <ArrowLeft className="w-5 h-5" />
-                 Back to Recommended Jobs
-               </button>
-            </div>
-          )}
-
-          <div className="h-full">
-            {selectedJob ? (
-              <JobDetail job={selectedJob} />
-            ) : (
-              <div className="flex items-center justify-center h-full text-gray-400">
-                Select a job to view details
+      <div className="flex-1 overflow-y-auto bg-gray-50 relative custom-scrollbar">
+        <AnimatePresence mode="wait">
+          {!selectedJob ? (
+            <motion.div
+              key="list-view"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.2 }}
+              className="max-w-3xl mx-auto py-8 px-4 sm:px-6 h-full flex flex-col"
+            >
+              <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden flex flex-col h-full min-h-[600px]">
+                <JobList
+                  jobs={jobs}
+                  selectedJob={selectedJob}
+                  onSelectJob={handleJobSelect}
+                />
               </div>
-            )}
-          </div>
-        </div>
+            </motion.div>
+          ) : (
+            <motion.div
+              key="detail-view"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 20 }}
+              transition={{ duration: 0.2 }}
+              className="max-w-4xl mx-auto py-8 px-4 sm:px-6"
+            >
+              <button
+                onClick={handleBack}
+                className="mb-6 flex items-center gap-2 text-gray-600 font-medium text-sm hover:text-gray-900 bg-white px-4 py-2 rounded-lg shadow-sm border border-gray-200 w-fit transition-colors"
+              >
+                <ArrowLeft className="w-5 h-5" />
+                Back to Recommended Jobs
+              </button>
+
+              <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                <JobDetail job={selectedJob} />
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </MainLayout>
   );
