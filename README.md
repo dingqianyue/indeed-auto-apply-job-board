@@ -2,6 +2,21 @@
 
 This repository contains both the frontend UI and the backend automation module for the Jobnova AI agent take-home challenge.
 
+## Video Demo
+
+[Link](https://youtu.be/xQRzc87-KF8?si=KKLve2YBUqKFuaiv)
+
+The demo showcases the complete end-to-end workflow of the application:
+
+- Starting the frontend and API bridge.
+- Viewing the job listings and application statuses.
+- Triggering **Auto Apply** from the frontend.
+- The Express API invoking the Playwright automation.
+- Playwright restoring the saved Indeed session using `storageState`.
+- The automation navigating through the application flow and updating job statuses in real time.
+
+**Note:** For the demo video, I cropped out the second and third jobs because both applications automatically progressed to the final "Review your application" page. Since every required field was autofilled, they followed the exact same workflow as the first job. The automation intentionally pauses at the final review step to allow users to manually verify their application before submission, so continuing those jobs would have shown the same behavior.
+
 ## Overall Architecture
 
 The project is structured as a monorepo consisting of three main parts:
